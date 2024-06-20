@@ -4,6 +4,7 @@ html{
 body{
     margin: 50px 100px;
 }
+
 /* styling the navigation */
 .title{
     display: flex;
@@ -42,9 +43,13 @@ body{
     
     
 }
-.links li a:hover{
+
+
+
+.links li a:hover,.footer-navigation a:hover{
     text-decoration: underline;
 }
+
 
 /* Styling the main container  */
 
@@ -127,7 +132,7 @@ footer {
 
 .footer-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-wrap: wrap;
     
     margin: 0 auto;
@@ -135,7 +140,7 @@ footer {
 
 .footer-section {
     margin: 10px;
-    min-width: 40%;
+    /* min-width: 40%; */
 }
 
 .footer-section h2 {
@@ -155,6 +160,24 @@ footer {
 
 .footer-section a:hover {
     text-decoration: underline;
+}
+.footer-navigation a {
+    color: darkblue;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+    text-underline-offset: 5px;
+}
+
+ 
+.footer-navigation li{
+    list-style: none;
+}
+.footer-navigation ul{
+    padding: 0;
+}
+.contact-info p{
+    margin: 5px 0;
 }
 
 
