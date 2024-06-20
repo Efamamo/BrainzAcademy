@@ -1,14 +1,70 @@
+html{
+    background-color: whitesmoke;
+}
 body{
     margin: 50px 100px;
+   
+   
 
 }
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    font-family: "Great Vibes", cursive;
+  font-weight: 500;
+  font-style: normal;
+    color: darkred;
+}
+
 .landing-container{
+    height: 60vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: start;
+    align-items: center;
 
 }
+
+
+.landing-container .greeting{
+    width: 60%;
+}
+
+.landing-image-container{
+    width: 30%;
+}
+
+.links{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 25px;
+}
+
+
+
+.links li{
+    list-style: none;
+   
+}
+.links li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: darkblue;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    
+    
+}
+.links li:hover{
+    text-decoration: underline;
+}
+
+
 .welcome{
     font-size: 30px;
     display: block;
@@ -16,15 +72,6 @@ body{
     font-weight: 900;
 }
 
-a{
-    text-decoration: none;
-    color: white;
-    background-color: darkblue;
-    padding: 13px;
-    border-radius: 5px;
-    font-size: large;
-     
-}
 
 .outer-container{
     width: 100%;
@@ -39,8 +86,12 @@ img{
     width: 100%;
 }
 
-.hero{
-    width: 100%;
+img.header-image {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 .first-image-container,.second-image-container{
@@ -52,4 +103,50 @@ img{
 
 .first-image-container{
     margin-bottom: 20px;
+}
+
+.get-started{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #e8e7e7;
+    
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    margin: 10px;
+    min-width: 200px;
+}
+
+.footer-section h2 {
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+.footer-section a {
+    color: blue;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
 }
