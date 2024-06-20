@@ -159,7 +159,7 @@ footer {
     gap: 10px;
 }
 
-.phone p,.email a{
+.phone a,.email a{
     margin-top: 0;
 }
 
