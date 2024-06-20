@@ -3,38 +3,19 @@ html{
 }
 body{
     margin: 50px 100px;
-   
-   
-
 }
+/* styling the navigation */
 .title{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .logo{
     font-family: "Great Vibes", cursive;
   font-weight: 500;
   font-style: normal;
     color: darkred;
-}
-
-.landing-container{
-    height: 60vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-
-.landing-container .greeting{
-    width: 60%;
-}
-
-.landing-image-container{
-    width: 30%;
 }
 
 .links{
@@ -65,6 +46,26 @@ body{
     text-decoration: underline;
 }
 
+/* Styling the main container  */
+
+.landing-container{
+    height: 60vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.landing-container .greeting{
+    width: 60%;
+}
+
+.landing-image-container{
+    width: 30%;
+}
+
 
 .welcome{
     font-size: 30px;
@@ -83,7 +84,8 @@ body{
     margin-bottom: 50px;
     
 }
-img.header-image {
+
+img{
     width: 100%;
 }
 
@@ -94,6 +96,12 @@ img.header-image {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
+.get-started{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* About page styling */
 
 .first-image-container,.second-image-container{
     display: flex;
@@ -106,10 +114,7 @@ img.header-image {
     margin-bottom: 20px;
 }
 
-.get-started{
-    text-decoration: none;
-    font-weight: bold;
-}
+/* footer styling */
 
 footer {
     background-color: #e8e7e7;
@@ -166,4 +171,8 @@ footer {
 .social-container{
     display: flex;
     gap: 7px;
+}
+
+.social-container img{
+    width: 20px;
 }
