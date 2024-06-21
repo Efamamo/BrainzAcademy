@@ -1,9 +1,9 @@
 # BrainAcademy
-Brain Acadamy is website for you to develope ur general knowledge!
+Brain Acadamy is website for you to develope ur Skills!
 
 Features:
-- Materials
+- Materials for study
 - Level Based Quizes
 - Answer Explanations
-- Score Board
+- Score and progress you made
   
