@@ -46,11 +46,14 @@ body{
     
 }
 
-
+.links li a:active,.footer-navigation a:hover{
+    text-decoration: underline;
+}
 
 .links li a:hover,.footer-navigation a:hover{
     text-decoration: underline;
 }
+
 
 .theme-switch-wrapper {
     display: flex;
@@ -131,9 +134,25 @@ input:checked + .slider:before {
 
 
 /* About page styling */
+.about_container{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: center;
+    margin: 100px 0;
+}
 
-img{
-    width: 100%;
+.about_container h2{
+    text-align: center;
+}
+
+
+
+.about_container img{
+    width: 40%;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 
