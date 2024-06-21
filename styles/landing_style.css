@@ -44,11 +44,14 @@ body{
     
 }
 
-
+.links li a:active,.footer-navigation a:hover{
+    text-decoration: underline;
+}
 
 .links li a:hover,.footer-navigation a:hover{
     text-decoration: underline;
 }
+
 
 .theme-switch-wrapper {
     display: flex;
