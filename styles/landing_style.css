@@ -145,6 +145,7 @@ input:checked + .slider:before {
 
 .landing-image-container{
     width: 30%;
+    margin-top: 70px;
 }
 
 
@@ -182,18 +183,6 @@ img.header-image {
     font-weight: bold;
 }
 
-/* About page styling */
-
-.first-image-container,.second-image-container{
-    display: flex;
-    width: 100%;
-    gap : 50px;
-    flex: 1;
-}
-
-.first-image-container{
-    margin-bottom: 20px;
-}
 
 /* footer styling */
 
