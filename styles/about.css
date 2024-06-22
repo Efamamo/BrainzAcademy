@@ -1,9 +1,10 @@
-/* hi */
+
 html{
     background-color: whitesmoke;
 }
 body{
     margin: 50px 100px;
+    font-family: "Roboto", sans-serif;
 }
 
 /* styling the navigation */
