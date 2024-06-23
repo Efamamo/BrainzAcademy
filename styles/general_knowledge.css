@@ -1,0 +1,168 @@
+html{
+    background-color: whitesmoke;
+}
+body{
+    margin: 50px 100px;
+    font-family: "Roboto", sans-serif;
+}
+
+/* styling the navigation */
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.logo{
+    font-family: "Great Vibes", cursive;
+  font-weight: 500;
+  font-style: normal;
+    color: darkred;
+}
+
+.links{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+
+
+.links li{
+    list-style: none;
+   
+}
+.links li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: darkblue;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    text-underline-offset: 5px;
+    
+    
+}
+
+.links li a:hover,.footer-navigation a:hover{
+    text-decoration: underline;
+   
+}
+
+body>p{
+    margin: 0 30px;
+
+}
+body>h2{
+    text-align: center;
+}
+
+.each{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 50px 20px;
+    padding: 10px;
+    transition: ease 1.2s;
+    cursor: pointer;
+}
+.each img{
+    width: 20%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.each:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+}
+
+.each-link{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+
+footer {
+    margin-top: 100px;
+    background-color: #e8e7e7;
+    
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+    margin: 0 auto;
+}
+
+.footer-section {
+    margin: 10px;
+    /* min-width: 40%; */
+}
+
+.footer-section h2 {
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+.footer-section a {
+    color: blue;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+.footer-navigation a {
+    color: darkblue;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+    text-underline-offset: 5px;
+}
+
+ 
+.footer-navigation li{
+    list-style: none;
+}
+.footer-navigation ul{
+    padding: 0;
+}
+.contact-info p{
+    margin: 5px 0;
+}
+
+
+
+.phone, .email{
+    display: flex;
+    gap: 10px;
+}
+
+.phone a,.email a{
+    margin-top: 0;
+}
+
+.social-container{
+    display: flex;
+    gap: 7px;
+}
+
+.social-container img{
+    width: 20px;
+}
