@@ -11,6 +11,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 100px;
 }
 
 .logo{
@@ -44,65 +45,50 @@ body{
     
     
 }
+
 .links li a:hover,.footer-navigation a:hover{
     text-decoration: underline;
    
 }
 
+body>p{
+    margin: 0 30px;
 
-main{
-    height: 60vh;
+}
+body>h2{
+    text-align: center;
+}
+
+.each{
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 20px;
-    justify-content: center;
-}
-
-
-.choice button{
-    width: 200px;
-    border-radius: 5px;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
+    gap: 30px;
+    margin: 50px 20px;
+    padding: 10px;
+    transition: ease 1.2s;
     cursor: pointer;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(109, 137, 140, 0.4);
 }
-.choice h2{
-    color: rgb(2, 2, 82);
+.each img{
+    width: 20%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.each:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+}
+
+.each-link{
+    text-decoration: none;
+    color: black;
 }
 
 
-.elementary {
-    background-color: #5094f5; /* Sky Blue */
-   
-}
 
-.highschool {
-    background-color: #db7522; /* Orange */
-   
-}
-
-.higher-level {
-    background-color: #008080; /* Teal */
-  
-}
-
-.general {
-    background-color: #2F4F4F; /* Dark Slate Gray */
-   
-}
-
-/* Optional: Add some hover effects */
-button:hover {
-    opacity: 0.8;
-}
 
 
 footer {
+    margin-top: 100px;
     background-color: #e8e7e7;
     
     padding: 20px 0;
@@ -180,4 +166,3 @@ footer {
 .social-container img{
     width: 20px;
 }
-

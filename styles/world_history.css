@@ -11,6 +11,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 100px;
 }
 
 .logo{
@@ -44,23 +45,36 @@ body{
     
     
 }
+
 .links li a:hover,.footer-navigation a:hover{
     text-decoration: underline;
    
 }
+/* world history style */
 
-
-main{
-    height: 60vh;
+.wiki{
+    margin-top: 20px;
+}
+.each-general{
     display: flex;
-    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
     align-items: center;
-    gap: 20px;
-    justify-content: center;
 }
 
+.image-container{
+    width: 30%;
+}
 
-.choice button{
+.image-container img{
+    width: 100%;
+}
+
+.description-container{
+    width: 50%;
+}
+
+.quiz{
     width: 200px;
     border-radius: 5px;
     color: white;
@@ -70,39 +84,22 @@ main{
     cursor: pointer;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(109, 137, 140, 0.4);
+    color: rgb(38, 167, 210);
+    margin: auto;
+    display: block;
 }
-.choice h2{
-    color: rgb(2, 2, 82);
-}
-
-
-.elementary {
-    background-color: #5094f5; /* Sky Blue */
-   
+body>h2{
+    text-align: center;
 }
 
-.highschool {
-    background-color: #db7522; /* Orange */
-   
+a{
+    text-decoration: none;
 }
 
-.higher-level {
-    background-color: #008080; /* Teal */
-  
-}
-
-.general {
-    background-color: #2F4F4F; /* Dark Slate Gray */
-   
-}
-
-/* Optional: Add some hover effects */
-button:hover {
-    opacity: 0.8;
-}
 
 
 footer {
+    margin-top: 100px;
     background-color: #e8e7e7;
     
     padding: 20px 0;
@@ -180,4 +177,3 @@ footer {
 .social-container img{
     width: 20px;
 }
-
