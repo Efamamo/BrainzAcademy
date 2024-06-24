@@ -150,7 +150,7 @@ button{
     cursor: pointer;
 
 }
-/* .sideTitle{
+.sideTitle{
     margin: 10px;
     padding: 5px;
     width: 80%;
@@ -168,7 +168,7 @@ button{
     margin-bottom: 30px;
     font-weight: bolder;
 
-} */
+}
 footer {
     margin-top: 100px;
     background-color: #e8e7e7;
