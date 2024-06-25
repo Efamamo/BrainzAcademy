@@ -124,11 +124,14 @@ input:checked + .slider:before {
 .higherLevelBody , .elementaryBody, .highschoolBody{
     height: 80vh;
     display: flex;
-    gap: 15px;
+    gap: 30px;
+    align-items: center;
 }
 .image{
-    width: 1200px;
-    height: 675px;
+    width: 70%;
+    height: 70%;
+    
+    
 }
 .departments , .content , .grades{
     height: 60vh;
