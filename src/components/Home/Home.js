@@ -1,10 +1,13 @@
 import brain from "../../images/brain_empower.png";
+import saveDetails from "../Resources/ElementaryResources/Grade7/Details";
 import "./Home.css";
+import { useEffect } from "react";
 function Home() {
-  return (
+
+  useEffect(()=>{saveDetails()},[])
   
+  return (
     <div className="landing-container">
-      
       <div className="greeting">
         <h1>Empowering Minds, One Quiz at a Time</h1>
         <p>
@@ -33,8 +36,6 @@ function Home() {
         <img className="header-image" src={brain} alt="" />
       </div>
     </div>
-    
-    
   );
 }
 

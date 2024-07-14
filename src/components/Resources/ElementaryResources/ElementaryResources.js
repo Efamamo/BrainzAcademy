@@ -1,11 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import elementary from "../../../images/elementary-students.jpeg";
-import Footer from "../../Footer/Footer";
-import Header from "../../Header/Header";
 import '../EachResources.css'
 
-
 function ElementaryResources() {
+
+  
   return (
    
     <div className="elementaryBody">
