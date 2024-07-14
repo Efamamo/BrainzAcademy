@@ -1,12 +1,14 @@
 .books{
-    width: 90%;
-    margin: 100px auto;
+    margin: 50px auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 50px;
-    justify-content: space-between;
+    gap: 30px;
+    justify-content: space-evenly;
 }
-
+.books>p{
+    width: 90%;
+    margin: auto;
+}
 .grade{
     width: 80%;
     margin: auto;
@@ -14,6 +16,6 @@
 
 .grade h2{
     text-align: center;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
