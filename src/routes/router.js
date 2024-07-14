@@ -13,6 +13,9 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Science from "../components/Resources/General Knowledge/Science/Science";
 import Litrature from "../components/Resources/General Knowledge/Litrature/Litrature";
+import Subject from "../components/Resources/ElementaryResources/Subject";
+import Grade7 from "../components/Resources/ElementaryResources/Grade7/Grade7";
+import Grade8 from "../components/Resources/ElementaryResources/Grade8/Grade8";
 
 function Element(props) {
   return (
@@ -60,6 +63,9 @@ const routes = [
     element: <Element page={<Litrature />} />,
   },
   { path: "/quizzes", element: <Element page={<Quizzes />} /> },
+  { path: '/resources/elementary/grade7', element: <Element page={<Grade7/>}/>},
+  { path: '/resources/elementary/grade8', element: <Element page={<Grade8/>}/>}
+
 ];
 
 const router = createBrowserRouter(routes);

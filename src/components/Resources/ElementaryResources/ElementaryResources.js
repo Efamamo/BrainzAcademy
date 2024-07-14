@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import elementary from "../../../images/elementary-students.jpeg";
 import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
@@ -18,8 +19,8 @@ function ElementaryResources() {
           we've got you covered. Choose your grade below to get started.
         </p>
         <h2>Choose Grade</h2>
-        <button>Grade 7</button>
-        <button>Grade 8</button>
+        <Link to='/resources/elementary/grade7'><button>Grade 7</button></Link>
+        <Link to='/resources/elementary/grade8'><button>Grade 8</button></Link>
       </div>
       <img className="image" src={elementary} alt="" />
     </div>

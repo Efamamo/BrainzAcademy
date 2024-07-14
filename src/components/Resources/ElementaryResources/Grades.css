@@ -1,0 +1,19 @@
+.books{
+    width: 90%;
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.grade{
+    width: 80%;
+    margin: auto;
+}
+
+.grade h2{
+    text-align: center;
+    margin-top: 20px;
+}
+
