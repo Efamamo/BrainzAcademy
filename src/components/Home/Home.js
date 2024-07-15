@@ -1,10 +1,15 @@
 import brain from "../../images/brain_empower.png";
+import saveGrade7Details from "../Resources/ElementaryResources/Grade7/Details";
 import saveDetails from "../Resources/ElementaryResources/Grade7/Details";
+import saveGrade8Details from "../Resources/ElementaryResources/Grade8/Details";
 import "./Home.css";
 import { useEffect } from "react";
 function Home() {
 
-  useEffect(()=>{saveDetails()},[])
+  useEffect(()=>{
+    saveGrade7Details()
+    saveGrade8Details()
+  },[])
   
   return (
     <div className="landing-container">

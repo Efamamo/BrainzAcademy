@@ -25,15 +25,17 @@ function Grade7() {
       </p>
       <h2>Choose Text Book</h2>
       <div className="books">
-        <Link to="/resources/elementary/grade7/amharic"><Subject number={1} title={"Amharic"} image={amharic} /></Link>
-        <Link to='/resources/elementary/grade7/english'><Subject number={2} title={"English"} image={english} /></Link>
-        <Link to="/resources/elementary/grade7/maths"><Subject number={3} title={"Mathematics"} image={maths} /></Link>
-        <Link to="/resources/elementary/grade7/social"><Subject number={4} title={"Social Studies"} image={social} /></Link>
-        <Link to="/resources/elementary/grade7/general"><Subject number={5} title={"General Science"} image={general} /></Link>
-        <Link to="/resources/elementary/grade7/pva"><Subject number={6} title={"PVA"} image={pva} /></Link>
-        <Link to="/resources/elementary/grade7/it"><Subject number={7} title={"IT"} image={it} /></Link>
-        <Link to="/resources/elementary/grade7/citizen"><Subject number={8} title={"Citizenship Education"} image={citizen} /></Link>
-        <Link to="/resources/elementary/grade7/carrer"><Subject number={9} title={"Carrer"} image={carrer} /></Link>
+
+    
+        <Link to="/resources/elementary/grade7/amharc"><Subject number={1} title={"Amharic"} image={amharic} grade={7} subject={"amharc"}/></Link>
+        <Link to='/resources/elementary/grade7/english'><Subject number={2} title={"English"} image={english} grade={7} subject={"english"} /></Link>
+        <Link to="/resources/elementary/grade7/maths"><Subject number={3} title={"Mathematics"} image={maths} grade={7} subject={"maths"}/></Link>
+        <Link to="/resources/elementary/grade7/social"><Subject number={4} title={"Social Studies"} image={social} grade={7} subject={"social"} /></Link>
+        <Link to="/resources/elementary/grade7/general"><Subject number={5} title={"General Science"} image={general} grade={7} subject={"general"} /></Link>
+        <Link to="/resources/elementary/grade7/pva"><Subject number={6} title={"PVA"} image={pva} grade={7} subject={"pva"}/></Link>
+        <Link to="/resources/elementary/grade7/it"><Subject number={7} title={"IT"} image={it} grade={7} subject={"it"}/></Link>
+        <Link to="/resources/elementary/grade7/citizen"><Subject number={8} title={"Citizenship Education"} image={citizen} grade={7} subject={"citizen"}/></Link>
+        <Link to="/resources/elementary/grade7/career"><Subject number={9} title={"Carrer"} image={carrer} grade={7} subject={"career"}/></Link>
       </div>
     </div>
   );

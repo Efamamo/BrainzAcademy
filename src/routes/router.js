@@ -74,7 +74,7 @@ const routes = [
   },
   {
     path: "/resources/elementary/:grade/:subject",
-    element: <ElementarySubjectDetail/>,
+    element: <Element page={<ElementarySubjectDetail/>}/>,
   },
 ];
 
