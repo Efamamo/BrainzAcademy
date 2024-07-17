@@ -49,7 +49,7 @@ function Geography() {
           link={geo.link}
         />
       ))}
-      {count < geography.length &&  <button onClick={load} id="loadMoreBtn" class="load-more-btn">Load More...</button>}
+      {filteredGeography.length>0 && count < geography.length &&  <button onClick={load} id="loadMoreBtn" class="load-more-btn">Load More...</button>}
 
     </div>
    

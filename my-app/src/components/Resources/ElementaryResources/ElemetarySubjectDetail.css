@@ -40,6 +40,10 @@
 
 }
 
+.sidebar a{
+    color: black;
+}
+
 .sidebar h2{
     text-align: center;
 }
