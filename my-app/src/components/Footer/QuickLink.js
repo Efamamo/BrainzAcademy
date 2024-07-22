@@ -9,7 +9,7 @@ function QuickLink() {
           <li><Link to='/'> Home</Link></li>
           <li><Link to='/about'>About</Link></li>
           <li><Link to='/resources'>Resources</Link></li>
-          <li><Link to='/quizzes'>Quizzes</Link></li>
+          <li><Link to='/exams'>Quizzes</Link></li>
         </ul>
       </div>
    

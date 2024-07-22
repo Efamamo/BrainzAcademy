@@ -30,7 +30,7 @@ const routes = [
   { path: "/", element: <Element page={<Home />} /> },
   { path: "/about", element: <Element page={<About />} /> },
   { path: "/resources", element: <Element page={<Resources />} /> },
-  {path: "/exams", element : <Element page={<Exams/>} /> },
+  {path: "/exams", element : <Exams/> },
   {
     path: "/resources/elementary",
     element: <Element page={<ElementaryResources />} />,

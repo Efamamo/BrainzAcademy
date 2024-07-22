@@ -11,6 +11,7 @@ function Exams() {
   const dispatch = useDispatch();
   const exam = useSelector((state) => state.exam);
   const { solvedCount, correctCount, timeLeft } = exam;
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(generalExam.length / 6);
@@ -32,6 +33,10 @@ function Exams() {
     setIsModalOpen(false);
   };
 
+  // Scroll to top on page change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
   // Timer effect
   useEffect(() => {
     const timer = setInterval(() => {
@@ -52,7 +57,10 @@ function Exams() {
 
   return (
     <>
-      <div className="timer" style={{ textAlign: "end", margin: "20px 0", fontWeight: "bold" }}>
+      <div
+        className="timer"
+        style={{ textAlign: "end", margin: "20px 0", fontWeight: "bold" }}
+      >
         Time Remaining: {formatTime(timeLeft)}
       </div>
       <div className="exam-container">
