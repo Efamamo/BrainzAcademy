@@ -26,6 +26,12 @@ const examSlice = createSlice({
     decrementTime(state) {
       state.timeLeft = state.timeLeft > 0 ? state.timeLeft - 1 : 0;
     },
+    reset(state){
+        state.solvedCount= 0;
+        state.correctCount= 0;
+        state.answers= {};
+        state.timeLeft= 2 * 60 * 60;
+    }
   },
 });
 

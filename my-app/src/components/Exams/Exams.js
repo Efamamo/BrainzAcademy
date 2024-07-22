@@ -33,10 +33,18 @@ function Exams() {
     setIsModalOpen(false);
   };
 
+  //reset whenever person leaves page is
+  useEffect(()=>{
+    dispatch(examActions.reset())
+  },[])
+
+
   // Scroll to top on page change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage]);
+
+  
   // Timer effect
   useEffect(() => {
     const timer = setInterval(() => {
