@@ -12,9 +12,9 @@ function EachQuestion({ question, number }) {
 
   function handleChange(e) {
     setSelectedAnswer(e.target.value);
-    dispatch(examActions.increamentCount());
+    dispatch(examActions.incrementCount());
     if (e.target.value === question.correctAnswer) {
-      dispatch(examActions.increamentCorrectCount());
+      dispatch(examActions.incrementCorrectCount());
     }
     dispatch(examActions.addAnswer({key: number-1, value: e.target.value}))
   }

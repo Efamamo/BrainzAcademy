@@ -1,25 +1,36 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 
-const initialState = {solvedCount : 0, correctCount : 0, answers: {}}
+const initialState = {
+  solvedCount: 0,
+  correctCount: 0,
+  answers: {},
+  timeLeft: 2 * 60 * 60,
+};
+
 const examSlice = createSlice({
-    name: "exam",
-    initialState,
-    reducers: {
-        increamentCount(state) {
-            state.solvedCount ++
-        },
-        increamentCorrectCount(state) {
-            state.correctCount ++
-        },
-        addAnswer(state, action){
-            state.answers[action.payload.key] = action.payload.value
-        }
-    }
-})
+  name: "exam",
+  initialState,
+  reducers: {
+    incrementCount(state) {
+      state.solvedCount++;
+    },
+    incrementCorrectCount(state) {
+      state.correctCount++;
+    },
+    addAnswer(state, action) {
+      state.answers[action.payload.key] = action.payload.value;
+    },
+    setTimeLeft(state, action) {
+      state.timeLeft = action.payload;
+    },
+    decrementTime(state) {
+      state.timeLeft = state.timeLeft > 0 ? state.timeLeft - 1 : 0;
+    },
+  },
+});
 
+export const examActions = examSlice.actions;
 
-export const examActions = examSlice.actions
+const store = configureStore({ reducer: { exam: examSlice.reducer } });
 
-const store = configureStore({reducer:{exam: examSlice.reducer}})
-
-export default store
+export default store;

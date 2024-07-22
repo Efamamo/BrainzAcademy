@@ -3,19 +3,15 @@ import generalExam from "./questions/generalQuestions";
 import Progress from "../Progress";
 import { useEffect, useState } from "react";
 import PaginationComponent from "../Pagination";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import ModalComponent from "../Modal";
-
-  // modal for the score
-  // final styling
-
+import { examActions } from "../../store/store";
 
 function Exams() {
-
-  const exam = useSelector((state) => state.exam)
-  const solvedCount = exam.solvedCount
-  const correctCount = exam.correctCount
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const dispatch = useDispatch();
+  const exam = useSelector((state) => state.exam);
+  const { solvedCount, correctCount, timeLeft } = exam;
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(generalExam.length / 6);
 
@@ -24,39 +20,61 @@ function Exams() {
     currentPage * 6
   );
 
-  const handleSubmit = () =>{
-    setIsModalOpen(true)
-  }
+  const handleSubmit = () => {
+    setIsModalOpen(true);
+  };
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
-  function closeModal(){
-    setIsModalOpen(false)
-  }
+  // Timer effect
+  useEffect(() => {
+    const timer = setInterval(() => {
+      dispatch(examActions.decrementTime());
+    }, 1000);
 
+    return () => clearInterval(timer);
+  }, [dispatch]);
+
+  const formatTime = (seconds) => {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+    return `${hours.toString().padStart(2, "0")}:${minutes
+      .toString()
+      .padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+  };
 
   return (
     <>
+      <div className="timer" style={{ textAlign: "end", margin: "20px 0", fontWeight: "bold" }}>
+        Time Remaining: {formatTime(timeLeft)}
+      </div>
       <div className="exam-container">
         <div className="progress-indicator">
           <Progress count={solvedCount} total={generalExam.length} />
+          <h3>{solvedCount}</h3>
         </div>
         <div className="questions">
           {currentQuestions.map((question) => (
-            <>
-              <EachQuestion
-                key={generalExam.indexOf(question) + 1}
-                question={question}
-                number={generalExam.indexOf(question) + 1}
-              />
-            </>
+            <EachQuestion
+              key={generalExam.indexOf(question) + 1}
+              question={question}
+              number={generalExam.indexOf(question) + 1}
+            />
           ))}
         </div>
       </div>
-      {currentPage === totalPages &&<button className="load-more-btn" onClick={handleSubmit}>Submit</button>}
+      {currentPage === totalPages && (
+        <button className="load-more-btn" onClick={handleSubmit}>
+          Submit
+        </button>
+      )}
       <div className="pagination-container">
         <PaginationComponent
           totalPages={totalPages}
@@ -64,9 +82,16 @@ function Exams() {
           onPageChange={handlePageChange}
         />
       </div>
- 
-      
-      {isModalOpen && <ModalComponent solvedCount={solvedCount} isModalOpen={isModalOpen} closeModal={closeModal} correctCount={correctCount} totalQuestions={generalExam.length}/>}
+
+      {isModalOpen && (
+        <ModalComponent
+          solvedCount={solvedCount}
+          isModalOpen={isModalOpen}
+          closeModal={closeModal}
+          correctCount={correctCount}
+          totalQuestions={generalExam.length}
+        />
+      )}
     </>
   );
 }
