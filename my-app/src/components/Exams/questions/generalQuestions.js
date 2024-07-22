@@ -288,6 +288,16 @@ const generalExam = [
       question: "What is the capital of Russia?",
       choices: ["Saint Petersburg", "Novosibirsk", "Moscow", "Kazan"],
       correctAnswer: "Moscow"
+    },
+    {
+      question: "What is the atomic number of carbon?",
+      choices: ["6", "8", "12", "14"],
+      correctAnswer: "6"
+    },
+    {
+      question: "Who is the author of 'A Brief History of Time'?",
+      choices: ["Carl Sagan", "Neil deGrasse Tyson", "Stephen Hawking", "Richard Feynman"],
+      correctAnswer: "Stephen Hawking"
     }
   ];
 

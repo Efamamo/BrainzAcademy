@@ -22,13 +22,21 @@ h3.question{
     width: 30%;
     text-align: center;
     margin: 8px 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    opacity: 0.9;
 
 }
 
-.answer-label:active{
+label.active{
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+
+
+}
+
+label.active:active{
     transform: scale(0.95);
+    
 
 }
 
@@ -47,7 +55,7 @@ h3.question{
 
 
 .exam-container .questions{
-    width: 90%;
+    margin: 100px 0;
 }
 
 .pagination-container{
