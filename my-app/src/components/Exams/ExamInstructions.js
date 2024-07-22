@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 function QuizInstructions() {
   return (
     <div style={{ padding: '20px', maxWidth: '600px', margin: 'auto' }}>
@@ -17,6 +18,7 @@ function QuizInstructions() {
         <li>Once you select an answer, you cannot change it.</li>
         <li>At the end of the quiz, your total score will be displayed.</li>
         <li>Make sure to answer all questions. Your progress will be shown as you go.</li>
+        <li>You have two hours to finish the Quiz</li>
       </ul>
       <p>
         Good luck, and have fun!
