@@ -58,7 +58,6 @@ function Exams() {
       <div className="exam-container">
         <div className="progress-indicator">
           <Progress count={solvedCount} total={generalExam.length} />
-          <h3>{solvedCount}</h3>
         </div>
         <div className="questions">
           {currentQuestions.map((question) => (

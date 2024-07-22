@@ -1,5 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
+import error from "../images/error.png";
+import success from "../images/success.png";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
@@ -38,6 +40,7 @@ const ModalComponent = ({
       <div style={{ textAlign: "center" }}>
         {solvedCount === totalQuestions ? (
           <>
+            <img style={{width:"50px"}} src={success} alt="success icon" />
             <h2>Quiz Completed!</h2>
             <p>
               You answered {correctCount} out of {totalQuestions} questions
@@ -57,16 +60,20 @@ const ModalComponent = ({
           </>
         ) : (
           <>
+            <img style={{width: "100px"}} src={error} alt="error icon" />
             <h2>Quiz In Progress!</h2>
             <p>
-              You have completed {solvedCount} out of {totalQuestions}{" "}
+              You have completed only {solvedCount} out of {totalQuestions}{" "}
               questions.
             </p>
             <h3>Please finish all the questions.</h3>
           </>
         )}
 
-        <button onClick={closeModal} style={{ marginTop: "20px", backgroundColor:"red" }}>
+        <button
+          onClick={closeModal}
+          style={{ marginTop: "20px", backgroundColor: "red" }}
+        >
           Close
         </button>
       </div>
