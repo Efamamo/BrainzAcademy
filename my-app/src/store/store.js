@@ -30,7 +30,7 @@ const examSlice = createSlice({
         state.solvedCount= 0;
         state.correctCount= 0;
         state.answers= {};
-        state.timeLeft= 2 * 60 * 60;
+        state.timeLeft= 2*60*60;
     }
   },
 });

@@ -15,7 +15,10 @@ import Litrature from "../components/Resources/General Knowledge/Litrature/Litra
 import Grade7 from "../components/Resources/ElementaryResources/Grade7/Grade7";
 import Grade8 from "../components/Resources/ElementaryResources/Grade8/Grade8";
 import ElementarySubjectDetail from "../components/Resources/ElementaryResources/ElemetarySubjectDetail";
-import Exams from "../components/Exams/Exams";
+import Exam from "../components/Exams/Exam";
+import Exams from '../components/Exams/Exams'
+import QuizInstructions from "../components/Exams/ExamInstructions";
+import GeneralKnowledgeQuiz from "../components/Exams/GeneralKnowledgeQuiz";
 
 function Element(props) {
   return (
@@ -30,7 +33,9 @@ const routes = [
   { path: "/", element: <Element page={<Home />} /> },
   { path: "/about", element: <Element page={<About />} /> },
   { path: "/resources", element: <Element page={<Resources />} /> },
-  {path: "/exams", element : <Exams/> },
+  {path: "/exams", element : <Element page={ <Exams/> }/>},
+  {path: "/exams/examdesc", element : <Element page={ <QuizInstructions/> }/>},
+  {path: "/exams/exam", element :  <GeneralKnowledgeQuiz/>},
   {
     path: "/resources/elementary",
     element: <Element page={<ElementaryResources />} />,
