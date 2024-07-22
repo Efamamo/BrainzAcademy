@@ -65,7 +65,7 @@ a{
     cursor: pointer;
     border-radius: 5px;
     display: block;
-    margin: auto;
+    margin: 30px auto;
 }
 .load-more-btn:hover {
     background-color: #0056b3;

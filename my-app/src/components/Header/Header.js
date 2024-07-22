@@ -9,7 +9,7 @@ function Header() {
           <li><NavLink activeclassname='active' to='/'> Home</NavLink></li>
           <li><NavLink activeclassname='active' to='/about'>About</NavLink></li>
           <li><NavLink activeclassname='active' to='/resources'>Resources</NavLink></li>
-          <li><NavLink activeclassname='active'to="/quizzes">Quizzes</NavLink></li>
+          <li><NavLink activeclassname='active'to="/exams">Quizzes</NavLink></li>
         </ul>
 
         <div></div>

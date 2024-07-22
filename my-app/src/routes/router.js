@@ -8,15 +8,14 @@ import HighLevelResource from "../components/Resources/HigherLevelResources/High
 import GeneralKnowledge from "../components/Resources/General Knowledge/GeneralKnowledge";
 import WorldHistory from "../components/Resources/General Knowledge/World History/WorldHistory";
 import Geography from "../components/Resources/General Knowledge/Geography/Geography";
-import Quizzes from "../components/Quizzes/Quizzes";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Science from "../components/Resources/General Knowledge/Science/Science";
 import Litrature from "../components/Resources/General Knowledge/Litrature/Litrature";
-import Subject from "../components/Resources/ElementaryResources/Subject";
 import Grade7 from "../components/Resources/ElementaryResources/Grade7/Grade7";
 import Grade8 from "../components/Resources/ElementaryResources/Grade8/Grade8";
 import ElementarySubjectDetail from "../components/Resources/ElementaryResources/ElemetarySubjectDetail";
+import Exams from "../components/Exams/Exams";
 
 function Element(props) {
   return (
@@ -31,6 +30,7 @@ const routes = [
   { path: "/", element: <Element page={<Home />} /> },
   { path: "/about", element: <Element page={<About />} /> },
   { path: "/resources", element: <Element page={<Resources />} /> },
+  {path: "/exams", element : <Element page={<Exams/>} /> },
   {
     path: "/resources/elementary",
     element: <Element page={<ElementaryResources />} />,
@@ -63,7 +63,6 @@ const routes = [
     path: "/resources/general-knowledge/litrature",
     element: <Element page={<Litrature />} />,
   },
-  { path: "/quizzes", element: <Element page={<Quizzes />} /> },
   {
     path: "/resources/elementary/grade7",
     element: <Element page={<Grade7 />} />,
