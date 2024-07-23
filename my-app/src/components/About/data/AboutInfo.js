@@ -12,7 +12,7 @@ const aboutInfo = [
     isImageTop: true,
   },
   {
-    name: "Empowering Your Mind",
+    name: "Empower Your Mind",
     desc: "Empower your mind with BrainzAcademy, where we focus on developing critical thinking and problem-solving skills essential for success. Our platform encourages intellectual growth through innovative learning techniques and challenging content, designed to foster a love for learning. At BrainzAcademy, we nurture your cognitive abilities with interactive lessons, engaging multimedia resources, and personalized learning paths. Whether you're a student aiming to excel, a professional enhancing your skills, or a lifelong learner pursuing new knowledge, BrainzAcademy provides the tools and support to help you reach your full potential. Join us and discover how our tailored educational experiences can help you achieve your goals and thrive in an ever-changing world.",
     image: empower,
     isImageTop: false,

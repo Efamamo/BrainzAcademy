@@ -7,6 +7,8 @@ import "react-circular-progressbar/dist/styles.css";
 import { useSelector, useDispatch } from "react-redux";
 import { examActions } from "../store/store";
 
+Modal.setAppElement('#root');
+
 const ModalComponent = ({
   restart,
   solvedCount,

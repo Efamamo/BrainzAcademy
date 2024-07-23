@@ -14,6 +14,7 @@ h3.question{
 
 
 
+
 .answer-label{
     padding: 15px 10px;
     font-size: 17px;
@@ -97,21 +98,6 @@ label.active:active{
 }
 
 
-.exam-card{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    width: 320px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    margin: 10px;
-    cursor: pointer;
-    transition: ease 1.2s;
-
-
-}
 
 .exam-card:hover{
     transform: scale(1.04);
@@ -122,46 +108,24 @@ label.active:active{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 80px 0px;
+    margin: 100px 0;
     flex-wrap: wrap;
 }
 
 .level-quiz{
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
 }
 
-.general-quiz{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-}
+
 
 .exam-choosing-container a{
     color: black;
 }
 
-.general-knowledge-quiz-topics{
-    list-style: none;
-    text-align: center;
-    padding: 0px;
-}
-
-.general-knowledge-quiz-topics li{
-    font-weight: 500;
-    margin: 3px 0;
-}
-
-.general-desc{
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    padding: 20px;
-
-}
 
 
 .exam-intro{
@@ -188,7 +152,6 @@ label.active:active{
 
 .quiz-page p{
     font-size: 1.2em;
-    margin-bottom: 40px;
 }
 
 

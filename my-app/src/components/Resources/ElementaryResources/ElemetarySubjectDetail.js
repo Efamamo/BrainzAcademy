@@ -111,7 +111,7 @@ function ElementarySubjectDetail() {
           {grade.slice(1, 100)} TextBooks
         </h2>
         {currentSubject.relatedSubjects.map((sub) => (
-          <Link to={sub.link}>
+          <Link key={sub.name} to={sub.link}>
             <div className="related-links">
               <img src={pdf} />
               <h3>{sub.name}</h3>

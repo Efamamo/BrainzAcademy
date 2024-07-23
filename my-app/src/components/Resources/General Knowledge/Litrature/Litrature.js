@@ -51,7 +51,7 @@ function Litrature() {
         />
       ))}
       {count < literature.length && (
-        <button onClick={load} id="loadMoreBtn" class="load-more-btn">
+        <button onClick={load} id="loadMoreBtn" className="load-more-btn">
           Load More...
         </button>
       )}

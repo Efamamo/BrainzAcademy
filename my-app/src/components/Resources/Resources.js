@@ -26,19 +26,19 @@ function Resources() {
       </div>
       <div className="cards-container">
         <Link to="/resources/elementary">
-         <ResourceCard image={elementaryImg} name="Elementary"/>
+         <ResourceCard image={elementaryImg} name="Elementary" but="Explore"/>
         </Link>
 
         <Link to="/resources/highschool">
-        <ResourceCard image={highSchoolImg} name="High School"/>
+        <ResourceCard image={highSchoolImg} name="High School" but="Explore"/>
         </Link>
 
         <Link to="/resources/highlevel">
-        <ResourceCard image={higherLevelImg} name="Higher Level"/>
+        <ResourceCard image={higherLevelImg} name="Higher Level" but="Explore"/>
         </Link>
 
         <Link to="/resources/general-knowledge">
-        <ResourceCard image={generalKnowledgeImg} name="General Knowledge"/>   
+        <ResourceCard image={generalKnowledgeImg} name="General Knowledge" but="Explore"/>   
         </Link>
       </div>
     </div>

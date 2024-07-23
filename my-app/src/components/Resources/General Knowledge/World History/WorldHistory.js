@@ -54,7 +54,7 @@ function WorldHistory() {
         />
       ))}
       {filteredWorldHistory.length > 0 && count < worldHistory.length && (
-        <button onClick={load} id="loadMoreBtn" class="load-more-btn">
+        <button onClick={load} id="loadMoreBtn" className="load-more-btn">
           Load More...
         </button>
       )}

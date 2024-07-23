@@ -28,7 +28,7 @@ function Science() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   return (
     <div className="general-container">
       <p className="intro">
@@ -58,7 +58,7 @@ function Science() {
         />
       ))}
       {count < 50 && (
-        <button onClick={load} id="loadMoreBtn" class="load-more-btn">
+        <button onClick={load} id="loadMoreBtn" className="load-more-btn">
           Load More...
         </button>
       )}

@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import ExamLink from "./ExamLink";
 import { useEffect } from "react";
+import ResourceCard from "../Resources/ResourceCard";
+import eleExam from '../../images/choose.jpg'
+import highExam from '../../images/exam-ico.png'
+import unExam from '../../images/high-l-exam.jpg'
+import genExam from '../../images/gen-exam.png'
+
 function Exams() {
 
 
@@ -19,39 +25,17 @@ function Exams() {
       </p>
       <div className="exam-choosing-container">
         <div>
-          <h2 className="exam-intro">Choose Your Education Level</h2>
           <div className="level-quiz">
-            <ExamLink name="Elementary" />
-            <ExamLink name="HighSchool" />
-            <ExamLink name="Higher Level" />
-          </div>
-        </div>
-        <h2 className="exam-intro">OR</h2>
-        <div className="general-quiz">
+          <ResourceCard image={eleExam} name="Elementary" but={"Take Exam"}/>
+          <ResourceCard image={highExam} name="High School" but={"Take Exam"}/>
+          <ResourceCard image={unExam} name="Higher Level" but={"Take Exam"}/>
+          
+       
           <Link to="/exams/examdesc">
-            <ExamLink name="General Knowledge" />
+            <ResourceCard image={genExam} name="General Knowledge" but={"Take Exam"}/>
           </Link>
-          <div className="general-desc">
-            <h3
-              style={{
-                textAlign: "center",
-                margin: "20px",
-              }}
-            >
-              This Includes
-            </h3>
-            <ul className="general-knowledge-quiz-topics">
-              <li>Geography</li>
-              <li>History</li>
-              <li>Science</li>
-              <li>Mathematics</li>
-              <li>Litreture</li>
-              <li>Sports</li>
-              <li>Politics</li>
-              <li>Economics</li>
-              <li>Technology</li>
-            </ul>
           </div>
+         
         </div>
       </div>
     </div>
