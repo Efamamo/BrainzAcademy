@@ -1,9 +1,15 @@
 import AboutContainer from "./AboutContainer";
 import aboutInfo from "./data/AboutInfo";
 import "./About.css";
+import { useEffect } from "react";
 
 
 function About() {
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   
   return (
     <div>

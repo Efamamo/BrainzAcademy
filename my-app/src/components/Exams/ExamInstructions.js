@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 
 function QuizInstructions() {
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
   return (
-    <div style={{ padding: '20px', maxWidth: '600px', margin: 'auto' }}>
-      <h1>Welcome to the Ultimate Quiz Challenge!</h1>
+    <div style={{ padding: '20px', maxWidth: '700px', margin: 'auto' }}>
+      <h1>Welcome to the General Knowledge Quiz Zone!</h1>
       <p>
         Are you ready to test your knowledge and skills? This quiz will take you through a series of 60 challenging questions across various topics. Each question is designed to make you think and test your understanding.
       </p>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Search from "../../Search";
 import "./GeneralKnowledge.css";
 import IndividualGeneral from "./IndividualGeneral";
@@ -12,6 +12,11 @@ function GeneralKnowledge() {
   const filteredTopics = generalKnowledgeTopics.filter((topic) => {
     return topic.description.toLowerCase().includes(search.toLowerCase());
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
    
      <div className="general-container">

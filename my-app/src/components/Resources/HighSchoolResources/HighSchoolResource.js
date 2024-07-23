@@ -1,8 +1,12 @@
+import { useEffect } from "react";
 import highschool from "../../../images/highschool-students.jpeg";
-import Footer from "../../Footer/Footer";
-import Header from "../../Header/Header";
 import "../EachResources.css";
 function HighSchoolResource() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
    
       <div className="highschoolBody">

@@ -4,7 +4,7 @@ const initialState = {
   solvedCount: 0,
   correctCount: 0,
   answers: {},
-  timeLeft: 2 * 60 * 60,
+  timeLeft: 2*60*60,
 };
 
 const examSlice = createSlice({

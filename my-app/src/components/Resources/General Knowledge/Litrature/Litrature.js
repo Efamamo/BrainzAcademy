@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import literature from "../data/litrature";
 
 import "../EachGeneral.css";
@@ -6,25 +6,27 @@ import Search from "../../../Search";
 import SpecificGeneral from "../SpecificGeneral";
 function Litrature() {
   const [search, setSearch] = useState("");
-  const [currentElements, setCurrent] = useState(literature.slice(0,10))
-  const [count, setCount] = useState(10)
-  
+  const [currentElements, setCurrent] = useState(literature.slice(0, 10));
+  const [count, setCount] = useState(10);
+
   function handleSearch(val) {
     setSearch(val);
   }
 
-  const filteredLitrature= currentElements.filter((litrat) => {
+  const filteredLitrature = currentElements.filter((litrat) => {
     return litrat.description.toLowerCase().includes(search.toLowerCase());
   });
 
-  function load(){
-    setCurrent(literature.slice(0,count+10))
-    setCount(prev => prev+10)
-    }
+  function load() {
+    setCurrent(literature.slice(0, count + 10));
+    setCount((prev) => prev + 10);
+  }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
-    
-   
     <div className="general-container">
       <p className="intro">
         History is the captivating study of humanity's past, a window into the
@@ -48,10 +50,12 @@ function Litrature() {
           link={litrat.link}
         />
       ))}
-      {count < literature.length &&  <button onClick={load} id="loadMoreBtn" class="load-more-btn">Load More...</button>}
-      </div>
- 
-   
+      {count < literature.length && (
+        <button onClick={load} id="loadMoreBtn" class="load-more-btn">
+          Load More...
+        </button>
+      )}
+    </div>
   );
 }
 

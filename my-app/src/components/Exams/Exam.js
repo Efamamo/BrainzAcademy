@@ -26,6 +26,11 @@ function Exam( {generalExam}) {
     setIsModalOpen(true);
   };
 
+  const restart =  () => {
+    setCurrentPage(1)
+    dispatch(examActions.reset())
+  }
+
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
@@ -55,6 +60,7 @@ function Exam( {generalExam}) {
       if (timeLeft > 0) {
         dispatch(examActions.decrementTime());
       } else {
+        
         clearInterval(timer);
         handleSubmit();
       }
@@ -79,13 +85,10 @@ function Exam( {generalExam}) {
   return (
     
     <>
-      <div
-        className="timer"
-        style={{ textAlign: "end", margin: "20px 0", fontWeight: "bold" }}
-      >
+      <div className="timer">
         Time Remaining: {formatTime(timeLeft)}
       </div>
-      <Link to="/exams/examdesc"><div className="quit"><img style={{width:"40px"}} src={quit} alt="quit icon"/> <p>Quit Exam</p></div></Link>
+      <Link to="/exams"><div className="quit"><img style={{width:"30px"}} src={quit} alt="quit icon"/> <p>Quit Exam</p></div></Link>
       <div className="exam-container">
         <div className="progress-indicator">
           <Progress count={solvedCount} total={generalExam.length} />
@@ -102,11 +105,13 @@ function Exam( {generalExam}) {
           ))}
         </div>
       </div>
+
       {currentPage === totalPages && (
         <button className="load-more-btn" onClick={handleSubmit}>
           Submit
         </button>
       )}
+
       <div className="pagination-container">
         <PaginationComponent
           totalPages={totalPages}
@@ -117,6 +122,7 @@ function Exam( {generalExam}) {
 
       {isModalOpen && (
         <ModalComponent
+          restart={restart}
           solvedCount={solvedCount}
           isModalOpen={isModalOpen}
           closeModal={closeModal}

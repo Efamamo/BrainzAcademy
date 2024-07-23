@@ -8,11 +8,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { examActions } from "../store/store";
 
 const ModalComponent = ({
+  restart,
   solvedCount,
   isModalOpen,
   closeModal,
   correctCount,
   totalQuestions,
+  
 }) => {
   const percentage = (correctCount / totalQuestions) * 100;
 
@@ -44,12 +46,23 @@ const ModalComponent = ({
         <button
           onClick={()=>{
             closeModal()
-            dispatch(examActions.setTimeLeft(2*60*60))
+            restart()
           }}
           style={{ marginTop: "20px", backgroundColor: "red" }}
         >
           Close
         </button>
+        <br/>
+        <button
+          onClick={()=>{
+            closeModal()
+            restart()
+          }}
+          style={{ marginTop: "20px", backgroundColor: "green" }}
+        >
+          Restart Quiz
+        </button>
+
       </>
     );
   } else if (solvedCount === totalQuestions) {
@@ -73,10 +86,23 @@ const ModalComponent = ({
           />
         </div>
         <button
-          onClick={closeModal}
+          onClick={()=>{
+            closeModal()
+            dispatch(examActions.setTimeLeft(5*60))
+          }}
           style={{ marginTop: "20px", backgroundColor: "red" }}
         >
           Close
+        </button>
+        <br/>
+        <button
+          onClick={()=>{
+            closeModal()
+            restart()
+          }}
+          style={{ marginTop: "20px", backgroundColor: "green" }}
+        >
+          Restart QUiz
         </button>
       </>
     );
@@ -110,11 +136,12 @@ const ModalComponent = ({
           top: "50%",
           left: "50%",
           right: "auto",
+          width: "400px",
           bottom: "auto",
           marginRight: "-50%",
           transform: "translate(-50%, -50%)",
           backgroundColor: "rgba(0, 0, 0, 0.7)", // transparent black backdrop
-          padding: "10px",
+          padding: "30px",
           borderRadius: "10px",
           color: "white",
         },

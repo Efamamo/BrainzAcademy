@@ -10,7 +10,14 @@ import pva from '../../../../images/arts.jpg'
 import it from '../../../../images/IT.png'
 import citizen from '../../../../images/citizen.jpeg'
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 function Grade8() {
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div className="grade">
       <p>

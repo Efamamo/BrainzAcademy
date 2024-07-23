@@ -2,11 +2,15 @@ import "../EachResources.css";
 import highlevel from "../../../images/collage-student.webp";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
+import { useEffect } from "react";
 
 function HighLevelResource() {
-  function textHundler(event) {
-    console.log(event.target.value);
-  }
+  
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
    
       <div className="higherLevelBody">

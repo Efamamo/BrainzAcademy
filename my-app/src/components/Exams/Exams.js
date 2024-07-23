@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
 import ExamLink from "./ExamLink";
+import { useEffect } from "react";
 function Exams() {
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
-    <>
+    <div className="quiz-page">
+      <h1>Welcome to the Quiz Zone</h1>
       <p style={{ width: "80%", margin: "20px auto" }}>
-        Welcome to the Quiz Zone! Get ready to challenge yourself with our
+        Get ready to challenge yourself with our
         exciting range of quizzes. Whether you're looking to test your general
         knowledge or level up through progressively tougher questions, we've got
         you covered. Dive in and see how high you can score! Choose from our
@@ -32,10 +39,9 @@ function Exams() {
               style={{
                 textAlign: "center",
                 margin: "20px",
-                textDecoration: "underline",
               }}
             >
-              Includes
+              This Includes
             </h3>
             <ul className="general-knowledge-quiz-topics">
               <li>Geography</li>
@@ -51,7 +57,7 @@ function Exams() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

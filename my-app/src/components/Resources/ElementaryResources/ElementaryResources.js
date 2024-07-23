@@ -1,8 +1,13 @@
 import { Link, useParams } from "react-router-dom";
 import elementary from "../../../images/elementary-students.jpeg";
 import '../EachResources.css'
+import { useEffect } from "react";
 
 function ElementaryResources() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   
   return (

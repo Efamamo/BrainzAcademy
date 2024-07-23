@@ -12,7 +12,14 @@ import it from '../../../../images/IT.png'
 import citizen from '../../../../images/citizen.jpeg'
 import mother from '../../../../images/mother_tongue-1200x675.jpeg'
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 function Grade7() {
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div className="grade">
       <p>

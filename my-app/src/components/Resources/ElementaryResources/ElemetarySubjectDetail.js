@@ -2,6 +2,7 @@ import './ElemetarySubjectDetail.css'
 import { Link, useParams } from "react-router-dom";
 import pdf from "../../../images/pdf2.png";
 import download from "../../../images/downloading.png";
+import { useEffect } from 'react';
 
 function openBook(grade, subject) {
   window.location.href = `${process.env.PUBLIC_URL}/books/${grade}/${grade}-${subject}.pdf`;
@@ -20,6 +21,11 @@ function ElementarySubjectDetail() {
     link.click();
   };
   const currentSubject = JSON.parse(localStorage.getItem(`${grade}${subject}`));
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="outer-detail-container">

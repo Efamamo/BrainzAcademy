@@ -1,16 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import worldHistory from "../data/worldHistory";
 import SpecificGeneral from "../SpecificGeneral";
 
 import "../EachGeneral.css";
 import Search from "../../../Search";
 
-
 function WorldHistory() {
   const [search, setSearch] = useState("");
-  const [currentElemets, setCurrentElemets] = useState(worldHistory.slice(0,10))
-  const [count, setCount] = useState(10)
-
+  const [currentElemets, setCurrentElemets] = useState(
+    worldHistory.slice(0, 10)
+  );
+  const [count, setCount] = useState(10);
 
   function handleSearch(val) {
     setSearch(val);
@@ -20,10 +20,14 @@ function WorldHistory() {
     return history.description.toLowerCase().includes(search.toLowerCase());
   });
 
+  function load() {
+    setCurrentElemets(worldHistory.slice(0, count + 10));
+    setCount((prev) => prev + 10);
+  }
 
-  function load(){
-    setCurrentElemets(worldHistory.slice(0,count+10))
-    setCount(prev => prev+10)  }
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="general-container">
@@ -49,7 +53,7 @@ function WorldHistory() {
           link={history.link}
         />
       ))}
-      {filteredWorldHistory.length>0&& count < worldHistory.length && (
+      {filteredWorldHistory.length > 0 && count < worldHistory.length && (
         <button onClick={load} id="loadMoreBtn" class="load-more-btn">
           Load More...
         </button>

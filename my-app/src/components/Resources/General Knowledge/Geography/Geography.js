@@ -2,7 +2,7 @@ import geography from "../data/geography";
 import SpecificGeneral from "../SpecificGeneral";
 import "../EachGeneral.css";
 import Search from "../../../Search";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 function Geography() {
@@ -23,6 +23,10 @@ function Geography() {
     setCurrentElemets(geography.slice(0,count+10))
     setCount(prev => prev+10)
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
    

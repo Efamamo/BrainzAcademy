@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import scienceData from "../data/science";
 
 import "../EachGeneral.css";
@@ -24,6 +24,11 @@ function Science() {
     setCurrent(scienceData.slice(0, count + 10));
     setCount(prev => prev+10)
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div className="general-container">
       <p className="intro">

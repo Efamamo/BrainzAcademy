@@ -4,7 +4,7 @@ function ExamLink({name}){
     return (
         <div className='exam-card'>
             <img className='exam-icon' src={exam}/>
-            <h2>{name}</h2>
+            <h3>{name}</h3>
         </div>
     )
 }
