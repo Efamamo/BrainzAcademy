@@ -1,0 +1,21 @@
+
+
+.empty-indicator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    height: auto;
+  }
+  
+  .empty-img {
+    width: 248px;
+  }
+  
+  .empty-text {
+    font-style: italic;
+    font-size: 1.125rem; 
+    color: #718096; 
+  }
+  

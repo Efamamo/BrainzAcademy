@@ -3,6 +3,9 @@ import Search from "../../Search";
 import "./GeneralKnowledge.css";
 import IndividualGeneral from "./IndividualGeneral";
 import generalKnowledgeTopics from "./data/generaKnowledgelData";
+import EmptyIndicator from "../../EmptyIndicatior";
+
+
 function GeneralKnowledge() {
   const [search, setSearch] = useState("");
   function handleSearch(val) {
@@ -36,6 +39,7 @@ function GeneralKnowledge() {
       <div className="general-search">
         <Search onSearch={handleSearch} />
       </div>
+      {filteredTopics.length === 0 && <EmptyIndicator text="No Data"/>}
 
       {filteredTopics.map((topic) => (
         <IndividualGeneral

@@ -4,6 +4,7 @@ import scienceData from "../data/science";
 import "../EachGeneral.css";
 import Search from "../../../Search";
 import SpecificGeneral from "../SpecificGeneral";
+import EmptyIndicator from "../../../EmptyIndicatior";
 
 
 function Science() {
@@ -47,6 +48,7 @@ function Science() {
       <div className="search">
         <Search onSearch={handleSearch} />
       </div>
+      {filteredScience.length === 0 && <EmptyIndicator text="No Data"/>}
 
       {filteredScience.map((science) => (
         <SpecificGeneral
@@ -57,7 +59,7 @@ function Science() {
           link={science.link}
         />
       ))}
-      {count < 50 && (
+      { filteredScience.length>0 && count < scienceData.length && (
         <button onClick={load} id="loadMoreBtn" className="load-more-btn">
           Load More...
         </button>

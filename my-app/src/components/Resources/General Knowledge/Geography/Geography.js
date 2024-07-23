@@ -3,6 +3,7 @@ import SpecificGeneral from "../SpecificGeneral";
 import "../EachGeneral.css";
 import Search from "../../../Search";
 import { useEffect, useState } from "react";
+import EmptyIndicator from "../../../EmptyIndicatior";
 
 
 function Geography() {
@@ -43,6 +44,8 @@ function Geography() {
       <div className="search">
         <Search onSearch={handleSearch} />
       </div>
+
+      {filteredGeography.length === 0 && <EmptyIndicator text="No Data"/>}
 
       {filteredGeography.map((geo) => (
         <SpecificGeneral

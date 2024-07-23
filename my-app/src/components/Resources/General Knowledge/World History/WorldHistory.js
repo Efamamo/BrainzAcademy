@@ -4,6 +4,7 @@ import SpecificGeneral from "../SpecificGeneral";
 
 import "../EachGeneral.css";
 import Search from "../../../Search";
+import EmptyIndicator from "../../../EmptyIndicatior";
 
 function WorldHistory() {
   const [search, setSearch] = useState("");
@@ -43,6 +44,8 @@ function WorldHistory() {
       <div className="search">
         <Search onSearch={handleSearch} />
       </div>
+      {filteredWorldHistory.length === 0 && <EmptyIndicator text="No Data"/>}
+
 
       {filteredWorldHistory.map((history) => (
         <SpecificGeneral

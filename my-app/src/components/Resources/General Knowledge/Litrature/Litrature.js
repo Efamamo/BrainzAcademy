@@ -4,6 +4,7 @@ import literature from "../data/litrature";
 import "../EachGeneral.css";
 import Search from "../../../Search";
 import SpecificGeneral from "../SpecificGeneral";
+import EmptyIndicator from "../../../EmptyIndicatior";
 function Litrature() {
   const [search, setSearch] = useState("");
   const [currentElements, setCurrent] = useState(literature.slice(0, 10));
@@ -40,6 +41,7 @@ function Litrature() {
       <div className="search">
         <Search onSearch={handleSearch} />
       </div>
+      {filteredLitrature.length === 0 && <EmptyIndicator text="No Data"/>}
 
       {filteredLitrature.map((litrat) => (
         <SpecificGeneral
@@ -50,7 +52,7 @@ function Litrature() {
           link={litrat.link}
         />
       ))}
-      {count < literature.length && (
+      {filteredLitrature.length>0 && count < literature.length && (
         <button onClick={load} id="loadMoreBtn" className="load-more-btn">
           Load More...
         </button>
