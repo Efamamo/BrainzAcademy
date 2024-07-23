@@ -15,10 +15,7 @@ function Exams() {
         exciting range of quizzes. Whether you're looking to test your general
         knowledge or level up through progressively tougher questions, we've got
         you covered. Dive in and see how high you can score! Choose from our
-        Level-Based Quizzes, where you start at Level 1 and work your way up
-        through increasingly difficult questions, or our General Knowledge
-        Quizzes, perfect for trivia enthusiasts. Good luck, and may the best
-        score be yours!
+        Level-Based Quizzes.
       </p>
       <div className="exam-choosing-container">
         <div>

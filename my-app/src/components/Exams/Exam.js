@@ -5,7 +5,7 @@ import PaginationComponent from "../Pagination";
 import { useSelector, useDispatch } from "react-redux";
 import ModalComponent from "../Modal";
 import { examActions } from "../../store/store";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import quit from '../../images/icons/power-off-svgrepo-com (2).svg'
 
 
@@ -16,6 +16,7 @@ function Exam( {generalExam}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(generalExam.length / 6);
+  const navigate = useNavigate()
 
   const currentQuestions = generalExam.slice(
     (currentPage - 1) * 6,
@@ -68,8 +69,6 @@ function Exam( {generalExam}) {
 
     return () => clearInterval(timer);
   }, [timeLeft, dispatch, handleSubmit]);
-    
-
 
   const formatTime = (seconds) => {
     const hours = Math.floor(seconds / 3600);
@@ -80,6 +79,10 @@ function Exam( {generalExam}) {
       .padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
   };
 
+  const quitQuiz = () => {
+    navigate('/exams', { replace: true });
+  }
+
 
 
   return (
@@ -88,7 +91,7 @@ function Exam( {generalExam}) {
       <div className="timer">
         Time Remaining: {formatTime(timeLeft)}
       </div>
-      <Link to="/exams"><div className="quit"><img style={{width:"30px"}} src={quit} alt="quit icon"/> <p>Quit Exam</p></div></Link>
+      <div onClick={quitQuiz} className="quit"><img style={{width:"30px"}} src={quit} alt="quit icon"/> <p>Quit Exam</p></div>
       <div className="exam-container">
         <div className="progress-indicator">
           <Progress count={solvedCount} total={generalExam.length} />

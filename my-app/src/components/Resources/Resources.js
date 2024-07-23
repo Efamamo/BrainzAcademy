@@ -5,6 +5,7 @@ import elementaryImg from "../../images/elementary-res.jpg";
 import highSchoolImg from "../../images/highschool-res.jpg";
 import higherLevelImg from "../../images/univ.jpg";
 import generalKnowledgeImg from "../../images/GK.jpeg";
+import ResourceCard from "./ResourceCard";
 
 function Resources() {
 
@@ -25,43 +26,19 @@ function Resources() {
       </div>
       <div className="cards-container">
         <Link to="/resources/elementary">
-          <div className="card">
-            <img src={elementaryImg} alt="Elementary" />
-            <div className="card-content">
-              <h2>Elementary</h2>
-              <button className="button">Explore</button>
-            </div>
-          </div>
+         <ResourceCard image={elementaryImg} name="Elementary"/>
         </Link>
 
         <Link to="/resources/highschool">
-          <div className="card">
-            <img src={highSchoolImg} alt="High School" />
-            <div className="card-content">
-              <h2>High School</h2>
-              <button className="button">Explore</button>
-            </div>
-          </div>
+        <ResourceCard image={highSchoolImg} name="High School"/>
         </Link>
 
         <Link to="/resources/highlevel">
-          <div className="card">
-            <img src={higherLevelImg} alt="Higher Level" />
-            <div className="card-content">
-              <h2>Higher Level</h2>
-              <button className="button">Explore</button>
-            </div>
-          </div>
+        <ResourceCard image={higherLevelImg} name="Higher Level"/>
         </Link>
 
         <Link to="/resources/general-knowledge">
-          <div className="card">
-            <img src={generalKnowledgeImg} alt="General Knowledge" />
-            <div className="card-content">
-              <h2>General Knowledge</h2>
-              <button className="button">Explore</button>
-            </div>
-          </div>
+        <ResourceCard image={generalKnowledgeImg} name="General Knowledge"/>   
         </Link>
       </div>
     </div>

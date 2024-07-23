@@ -54,6 +54,7 @@ label.active:active{
     position: absolute;
     right: 130px;
     top: 115px;
+    cursor: pointer;
 }
 
 .quit p{
@@ -183,6 +184,11 @@ label.active:active{
 .quiz-page h1{
     font-size: 2.5em;
     margin-bottom: 20px;
+}
+
+.quiz-page p{
+    font-size: 1.2em;
+    margin-bottom: 40px;
 }
 
 
