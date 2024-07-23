@@ -1,7 +1,7 @@
-import resource from "../../../images/insights-books.jpg";
-import empower from "../../../images/gym.jpg";
-import quiz from "../../../images/student-quiz.jpeg";
-import score from "../../../images/result.jpg";
+import resource from "../../../images/backschool.png";
+import empower from "../../../images/br.png";
+import quiz from "../../../images/qz.png";
+import score from "../../../images/progress-ind.png";
 
 
 const aboutInfo = [

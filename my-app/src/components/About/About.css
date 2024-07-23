@@ -1,21 +1,29 @@
 .about_container{
     display: flex;
     justify-content: space-between;
-    gap: 60px;
+    gap: 150px;
     align-items: center;
-    margin: 100px 0;
+    margin: 50px 0;
     padding: 30px;
 
 }
 
+.about{
+    width: 90%;
+    margin: auto;
+}
 .about_container h2{
     text-align: center;
+}
+
+.about_container p{
+    font-size: 17px;
 }
 
 
 
 .about_container img{
-    width: 36%;
+    width: 30%;
     margin-bottom: 20px;
 }
 

@@ -9,19 +9,8 @@ function About() {
   }, []);
 
   return (
-    <div>
-      <p className="about-intro">
-       Your ultimate destination for comprehensive
-        educational resources. At BrainzAcademy, we believe in empowering
-        learners of all ages and levels by providing high-quality, easily
-        accessible materials designed to foster knowledge and curiosity. Our
-        platform is dedicated to offering a diverse range of resources, from
-        textbooks and interactive quizzes to in-depth articles and study guides.
-        Whether you're a student striving for excellence, a teacher seeking
-        reliable teaching tools, or a lifelong learner looking to expand your
-        horizons, BrainzAcademy is here to support your educational journey
-        every step of the way.
-      </p>
+    <div className="about">
+      
       {aboutInfo.map((info) => (
         <AboutContainer
           key={info.name}
