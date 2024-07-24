@@ -5,7 +5,6 @@ import amharic from "../../../../images/amharic.jpeg";
 import english from '../../../../images/englidh.jpg'
 import social from '../../../../images/social-science1-1200x675.png'
 import general from '../../../../images/general-science-1200x675.png'
-import pe from '../../../../images/Physical-Education-1200x675.jpg'
 import carrer from '../../../../images/carrer.webp'
 import pva from '../../../../images/arts.jpg'
 import it from '../../../../images/IT.png'

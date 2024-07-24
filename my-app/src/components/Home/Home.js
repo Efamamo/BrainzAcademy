@@ -1,6 +1,5 @@
 import brain from "../../images/cute-brain.png";
 import saveGrade7Details from "../Resources/ElementaryResources/Grade7/Details";
-import saveDetails from "../Resources/ElementaryResources/Grade7/Details";
 import saveGrade8Details from "../Resources/ElementaryResources/Grade8/Details";
 import "./Home.css";
 import { useEffect } from "react";

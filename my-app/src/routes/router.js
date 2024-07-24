@@ -16,7 +16,7 @@ import Grade7 from "../components/Resources/ElementaryResources/Grade7/Grade7";
 import Grade8 from "../components/Resources/ElementaryResources/Grade8/Grade8";
 import ElementarySubjectDetail from "../components/Resources/ElementaryResources/ElemetarySubjectDetail";
 import Exam from "../components/Exams/Exam";
-import Exams from '../components/Exams/Exams'
+import Exams from "../components/Exams/Exams";
 import QuizInstructions from "../components/Exams/ExamInstructions";
 import GeneralKnowledgeQuiz from "../components/Exams/GeneralKnowledgeQuiz";
 
@@ -24,61 +24,104 @@ function Element(props) {
   return (
     <>
       <Header />
-      {props.page}
+      {props.children}
       <Footer />
     </>
   );
 }
 const routes = [
-  { path: "/", element: <Element page={<Home />} /> },
-  { path: "/about", element: <Element page={<About />} /> },
-  { path: "/resources", element: <Element page={<Resources />} /> },
-  {path: "/exams", element : <Element page={ <Exams/> }/>},
-  {path: "/exams/examdesc", element : <Element page={ <QuizInstructions/> }/>},
-  {path: "/exams/exam", element :  <GeneralKnowledgeQuiz/>},
+  {
+    path: "/",
+    element: (
+      <Element>
+        <Home />
+      </Element>
+    ),
+  },
+  {
+    path: "/about",
+    element: (
+      <Element>
+        <About />
+      </Element>
+    ),
+  },
+  {
+    path: "/resources",
+    element: (
+      <Element>
+        <Resources />
+      </Element>
+    ),
+  },
+  {
+    path: "/exams",
+    element: (
+      <Element>
+        <Exams />
+      </Element>
+    ),
+  },
+  {
+    path: "/exams/examdesc",
+    element: (
+      <Element>
+        <QuizInstructions />
+      </Element>
+    ),
+  },
+  { path: "/exams/exam", element: <GeneralKnowledgeQuiz /> },
   {
     path: "/resources/elementary",
-    element: <Element page={<ElementaryResources />} />,
+    element: (
+      <Element>
+        <ElementaryResources />
+      </Element>
+    ),
   },
   {
     path: "/resources/highschool",
-    element: <Element page={<HighSchoolResource />} />,
+    element: (
+      <Element>
+        <HighSchoolResource />
+      </Element>
+    ),
   },
   {
     path: "/resources/highlevel",
-    element: <Element page={<HighLevelResource />} />,
+    element: <Element><HighLevelResource/></Element>,
   },
   {
     path: "/resources/general-knowledge",
-    element: <Element page={<GeneralKnowledge />} />,
+    element: <Element><GeneralKnowledge/></Element>,
   },
   {
     path: "/resources/general-knowledge/history",
-    element: <Element page={<WorldHistory />} />,
+    element: <Element><WorldHistory/></Element>
   },
   {
     path: "/resources/general-knowledge/geography",
-    element: <Element page={<Geography />} />,
+    element: <Element><Geography/></Element>
   },
   {
     path: "/resources/general-knowledge/science",
-    element: <Element page={<Science />} />,
+    element: <Element><Science/></Element>
   },
   {
     path: "/resources/general-knowledge/litrature",
-    element: <Element page={<Litrature />} />,
+    element: <Element><Litrature/></Element>,
   },
   {
     path: "/resources/elementary/grade7",
-    element: <Element page={<Grade7 />} />,
+    element: <Element><Grade7/></Element>
   },
   {
     path: "/resources/elementary/grade8",
-    element: <Element page={<Grade8 />} />,
+    element: <Element><Grade8/></Element>
   },
   {
     path: "/resources/elementary/:grade/:subject",
-    element: <Element page={<ElementarySubjectDetail/>}/>,
+    element: <Element><ElementarySubjectDetail/></Element>,
   },
 ];
 

@@ -39,7 +39,7 @@ function QuizInstructions() {
           style={{
             padding: "10px 20px",
             fontSize: "16px",
-            backgroundColor: "#007bff",
+            backgroundColor: "#0a4f98",
             borderRadius: "5px",
             display: "block",
             width: "200px",

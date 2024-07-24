@@ -20,6 +20,7 @@ function ElementarySubjectDetail() {
     link.download = `${grade}-${subject}.pdf`;
     link.click();
   };
+  
   const currentSubject = JSON.parse(localStorage.getItem(`${grade}${subject}`));
 
 
