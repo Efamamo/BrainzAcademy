@@ -1,11 +1,5 @@
-import { Link } from "react-router-dom";
 import ExamCard from "./ExamCard";
 import { useEffect } from "react";
-import ResourceCard from "../Resources/ResourceCard";
-import eleExam from '../../images/choose.jpg'
-import highExam from '../../images/exam-ico.png'
-import unExam from '../../images/high-l-exam.jpg'
-import genExam from '../../images/student-quiz.jpeg'
 import examCardDesc from "./ExamCardDescrption";
 
 function Exams() {

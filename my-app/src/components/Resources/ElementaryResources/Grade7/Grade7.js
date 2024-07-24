@@ -10,7 +10,6 @@ import carrer from '../../../../images/carrer.webp'
 import pva from '../../../../images/arts.jpg'
 import it from '../../../../images/IT.png'
 import citizen from '../../../../images/citizen.jpeg'
-import mother from '../../../../images/mother_tongue-1200x675.jpeg'
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 function Grade7() {
