@@ -9,9 +9,14 @@
 }
 
 .about{
-    width: 90%;
+    width: 95%;
     margin: auto;
 }
+
+.about_container>div{
+    width: 60%;
+}
+
 .about_container h2{
     text-align: center;
 }

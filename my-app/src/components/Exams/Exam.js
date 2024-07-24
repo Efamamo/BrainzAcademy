@@ -80,7 +80,7 @@ function Exam( {generalExam}) {
   };
 
   const quitQuiz = () => {
-    navigate('/exams', { replace: true });
+    navigate('/exams/examdesc', { replace: true });
   }
 
 

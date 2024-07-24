@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import ExamLink from "./ExamLink";
+import ExamCard from "./ExamCard";
 import { useEffect } from "react";
 import ResourceCard from "../Resources/ResourceCard";
 import eleExam from '../../images/choose.jpg'
 import highExam from '../../images/exam-ico.png'
 import unExam from '../../images/high-l-exam.jpg'
-import genExam from '../../images/gen-exam.png'
+import genExam from '../../images/student-quiz.jpeg'
+import examCardDesc from "./ExamCardDescrption";
 
 function Exams() {
 
@@ -23,22 +24,14 @@ function Exams() {
         you covered. Dive in and see how high you can score! Choose from our
         Level-Based Quizzes.
       </p>
-      <div className="exam-choosing-container">
-        <div>
-          <div className="level-quiz">
-          <ResourceCard image={eleExam} name="Elementary" but={"Take Exam"}/>
-          <ResourceCard image={highExam} name="High School" but={"Take Exam"}/>
-          <ResourceCard image={unExam} name="Higher Level" but={"Take Exam"}/>
-          
-       
-          <Link to="/exams/examdesc">
-            <ResourceCard image={genExam} name="General Knowledge" but={"Take Exam"}/>
-          </Link>
-          </div>
+      <div className="exams-cont">
+        {examCardDesc.map((exam,i) => (
+          <ExamCard key={i} name={exam.name} image={exam.image} description={exam.desc}/>
+        ))}
          
         </div>
       </div>
-    </div>
+  
   );
 }
 

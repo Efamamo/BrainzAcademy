@@ -4,7 +4,7 @@ function Header() {
   return (
   
       <div className="title">
-        <h1 className="logo">BrainzAcadamy</h1>
+        <h1 className="logo">BrainzAcademy</h1>
         <ul className="links">
           <li><NavLink activeclassname='active' to='/'> Home</NavLink></li>
           <li><NavLink activeclassname='active' to='/about'>About</NavLink></li>

@@ -40,6 +40,10 @@
 
 }
 
+img{
+    width: 100%;
+}
+
 .sidebar a{
     color: black;
 }

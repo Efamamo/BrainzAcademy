@@ -73,6 +73,11 @@ label.active:active{
     margin: 70px 0;
 }
 
+.exams-cont{
+    width: 90%;
+    margin: 100px auto;
+}
+
 .pagination-container{
     border: 0.2px solid grey;
     padding: 3px 20px;
@@ -93,33 +98,21 @@ label.active:active{
 }
 
 
-.exam-icon{
-    width: 60px;
-}
-
-
-
-.exam-card:hover{
-    transform: scale(1.04);
-
-}
-
-.exam-choosing-container{
+.exam-card{
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 100px 0;
-    flex-wrap: wrap;
-}
-
-.level-quiz{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    margin: 80px 0;
     gap: 100px;
 }
 
+.exam-card button{
+    background-color: blue;
+}
+
+.exam-icon{
+    width: 25%;
+}
 
 
 .exam-choosing-container a{
