@@ -107,7 +107,8 @@ label.active:active{
 }
 
 .exam-card button{
-    background-color: blue;
+    background-color: #007bff;
+    border-radius: 5px;
 }
 
 .exam-icon{
