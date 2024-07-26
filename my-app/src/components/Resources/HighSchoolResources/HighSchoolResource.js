@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import highschool from "../../../images/highschool-students.jpeg";
 import "../EachResources.css";
+import { Link, useParams } from "react-router-dom";
+
 function HighSchoolResource() {
 
   useEffect(() => {
@@ -19,10 +21,10 @@ function HighSchoolResource() {
             resources for your educational level.
           </p>
           <h2>Choose Grade</h2>
-          <button>Grade 9</button>
-          <button>Grade 10</button>
-          <button>Grade 11</button>
-          <button>Grade 12</button>
+          <Link to='/resources/highschool/grade9'><button>Grade 9</button></Link>
+          <Link to='/resources/highschool/grade10'><button>Grade 10</button></Link>
+          <Link to='/resources/highschool/grade11'><button>Grade 11</button></Link>
+          <Link to='/resources/highschool/grade12'><button>Grade 12</button></Link>
         </div>
         <img className="image" src={highschool} alt="" />
         

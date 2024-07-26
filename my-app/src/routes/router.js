@@ -19,6 +19,9 @@ import Exam from "../components/Exams/Exam";
 import Exams from "../components/Exams/Exams";
 import QuizInstructions from "../components/Exams/ExamInstructions";
 import GeneralKnowledgeQuiz from "../components/Exams/GeneralKnowledgeQuiz";
+import Grade9 from "../components/Resources/HighSchoolResources/Grade9/Grade9";
+import HighSchoolSubjectDetail from "../components/Resources/HighSchoolResources/HighSchoolSubjectDetails";
+import Grade10 from "../components/Resources/HighSchoolResources/Grade10/Grade10";
 
 function Element(props) {
   return (
@@ -122,6 +125,20 @@ const routes = [
   {
     path: "/resources/elementary/:grade/:subject",
     element: <Element><ElementarySubjectDetail/></Element>,
+    
+  },
+  {
+    path: "/resources/highschool/:grade/:subject",
+    element: <Element><HighSchoolSubjectDetail/></Element>,
+    
+  },
+  {
+    path: "/resources/highschool/grade9",
+    element: <Element><Grade9/></Element>,
+  },
+  {
+    path: "/resources/highschool/grade10",
+    element: <Element><Grade10/></Element>,
   },
 ];
 

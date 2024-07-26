@@ -1,6 +1,8 @@
 import brain from "../../images/cute-brain.png";
 import saveGrade7Details from "../Resources/ElementaryResources/Grade7/Details";
 import saveGrade8Details from "../Resources/ElementaryResources/Grade8/Details";
+import saveGrade10Details from "../Resources/HighSchoolResources/Grade10/Details";
+import saveGrade9Details from "../Resources/HighSchoolResources/Grade9/Details";
 import "./Home.css";
 import { useEffect } from "react";
 function Home() {
@@ -8,6 +10,9 @@ function Home() {
   useEffect(()=>{
     saveGrade7Details()
     saveGrade8Details()
+    saveGrade9Details()
+    saveGrade10Details()
+    
   },[])
   
   return (
