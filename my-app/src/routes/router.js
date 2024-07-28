@@ -22,6 +22,8 @@ import GeneralKnowledgeQuiz from "../components/Exams/GeneralKnowledgeQuiz";
 import Grade9 from "../components/Resources/HighSchoolResources/Grade9/Grade9";
 import HighSchoolSubjectDetail from "../components/Resources/HighSchoolResources/HighSchoolSubjectDetails";
 import Grade10 from "../components/Resources/HighSchoolResources/Grade10/Grade10";
+import Grade11 from "../components/Resources/HighSchoolResources/Grade11/Grade11";
+import Grade12 from "../components/Resources/HighSchoolResources/Grade12/Grade12";
 
 function Element(props) {
   return (
@@ -139,6 +141,14 @@ const routes = [
   {
     path: "/resources/highschool/grade10",
     element: <Element><Grade10/></Element>,
+  },
+  {
+    path: "/resources/highschool/grade11",
+    element: <Element><Grade11/></Element>,
+  },
+  {
+    path: "/resources/highschool/grade12",
+    element: <Element><Grade12/></Element>,
   },
 ];
 

@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './slider.css'
+import '../Grades.css'
 import maths from "../../../../images/G9-math.png";
 import amharic from "../../../../images/G9-Amharic.png";
 import english from '../../../../images/G9-english.png';
@@ -25,8 +26,7 @@ const Grade9 = () => {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 3,
-        gap:5,
-        
+        gap: 5,
     };
 
     return (
@@ -40,9 +40,9 @@ const Grade9 = () => {
                 towards achieving your academic goals and excelling in your studies.
             </p>
 
-            <h2 className="text-xl font-semibold mb-20">Lists of Grade 9 Textbooks</h2>
+            <h2 >Lists of Grade 9 Textbooks</h2>
 
-            <Slider {...settings}className="mb-20 ">
+            <Slider {...settings}>
                 <Link to="/resources/highschool/grade9/amharic">
                     <Subject number={1} title={"Amharic"} image={amharic} grade={9} subject={"amharic"} />
                 </Link>
@@ -71,7 +71,7 @@ const Grade9 = () => {
                     <Subject number={9} title={"Chemistry"} image={Chemistry} grade={9} subject={"chemistry"} />
                 </Link>
                 <Link to="/resources/highschool/grade9/HPE">
-                    <Subject number={10} title={"HPE"} image={HPE} grade={9} subject={"hpe"} />
+                    <Subject number={9} title={"HPE"} image={HPE} grade={9} subject={"hpe"} />
                 </Link>
                 <Link to="/resources/highschool/grade9/Physics">
                     <Subject number={11} title={"Physics"} image={Physics} grade={9} subject={"physics"} />

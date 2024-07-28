@@ -1,0 +1,22 @@
+Grade9.css
+
+.grade {
+    padding: 2rem;
+  }
+  
+  .grade p {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .grade h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 5rem;
+  }
+  
+  .slider-container {
+    margin-bottom: 5rem;
+  }
+  

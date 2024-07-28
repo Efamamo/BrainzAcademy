@@ -39,9 +39,9 @@ const Grade10 = () => {
                 towards achieving your academic goals and excelling in your studies.
             </p>
 
-            <h2 className="text-xl font-semibold mb-20">Lists of Grade 10 Textbooks</h2>
+            <h2 >Lists of Grade 10 Textbooks</h2>
 
-            <Slider {...settings} className="mb-20 ">
+            <Slider {...settings}>
                 <Link to="/resources/highschool/grade10/amharic">
                     <Subject number={1} title={"Amharic"} image={amharic} grade={10} subject={"amharic"} />
                 </Link>
