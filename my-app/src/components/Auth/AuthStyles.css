@@ -1,0 +1,68 @@
+.outer-form-container {
+  height: 60vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+.auth-input {
+  padding: 10px;
+  width: 90%;
+  border: solid 1px grey;
+  border-radius: 3px;
+  outline: none; /* Removes the default outline when the input is focused */
+}
+
+.auth-input:focus {
+  border: solid 1px grey; /* Keeps the border style the same on focus */
+}
+
+.form-container {
+  background-color: whitesmoke;
+
+  width: 450px;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+
+.form-container h2 {
+  text-align: center;
+
+  color: #333;
+  font-size: 24px;
+}
+.form-container > p {
+  text-align: center;
+}
+
+.form-container > p a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.error {
+  color: red;
+  margin: 1px;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.auth-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  width: 95%;
+  margin: 20px auto;
+}
+
+.person {
+  width: 35px;
+  cursor: pointer;
+}

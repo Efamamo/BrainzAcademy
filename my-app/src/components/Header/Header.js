@@ -2,9 +2,9 @@ import { NavLink } from 'react-router-dom';
 import './Header.css';
 import { useSelector } from 'react-redux';
 import Logout from '../Auth/Logout';
+import user from '../../images/user.png';
 function Header() {
   const auth = useSelector((state) => state.auth);
-  console.log(auth);
 
   return (
     <div className="title">

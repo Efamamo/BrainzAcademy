@@ -7,7 +7,7 @@ function Subject({ number, title, image, grade }) {
     e.preventDefault();
     const link = document.createElement('a');
     link.href = pdfPath;
-    link.download = `${grade}-${title}.pdf`;
+    link.download = `grade${grade}-${title.toLowerCase()}.pdf`;
     link.click();
   };
 

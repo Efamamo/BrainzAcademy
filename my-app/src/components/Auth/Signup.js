@@ -1,15 +1,25 @@
-import React, { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import './AuthStyles.css';
+import { useSelector } from 'react-redux';
 
 export default function Signup() {
   const [passwordError, setPasswordError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [usernameError, setUsernameError] = useState(false);
   const [serverError, setServerError] = useState(false);
+  const navigate = useNavigate();
 
+  const auth = useSelector((state) => state.auth);
   const emailInputRef = useRef();
   const usernameInputRef = useRef();
   const passwordInputRef = useRef();
+
+  useEffect(() => {
+    if (auth.isLoggedin) {
+      navigate('/');
+    }
+  }, [auth.isLoggedin, navigate]);
 
   async function submitHandler(e) {
     e.preventDefault();
@@ -36,6 +46,7 @@ export default function Signup() {
         setPasswordError(false);
         setUsernameError(false);
         setServerError(false);
+        alert('Verify Your Email !!');
       } else {
         console.log(data);
         if (!data.errors['password']) {
@@ -70,43 +81,56 @@ export default function Signup() {
     }
   }
   return (
-    <div>
-      <h2>Signup</h2>
-      <form onSubmit={submitHandler}>
-        <label>Username</label>
-        <input
-          ref={usernameInputRef}
-          name="username"
-          placeholder="Username"
-          type="text"
-          required
-        />
-        {usernameError ? <p style={{ color: 'red' }}>{usernameError}</p> : null}
-        <label>Email</label>
-        <input
-          ref={emailInputRef}
-          name="email"
-          placeholder="Email"
-          type="email"
-          required
-        />
-        {emailError ? <p style={{ color: 'red' }}>{emailError}</p> : null}
-        <label>Password</label>
-        <input
-          ref={passwordInputRef}
-          name="password"
-          placeholder="Password"
-          type="password"
-          required
-        />
-        {passwordError ? <p style={{ color: 'red' }}>{passwordError}</p> : null}
-        {serverError ? <p style={{ color: 'red' }}>{serverError}</p> : null}
+    <div className="outer-form-container">
+      <div className="form-container">
+        <h2>Signup</h2>
+        <form onSubmit={submitHandler}>
+          <div className="input-container">
+            <label>Username</label>
+            <input
+              className="auth-input"
+              ref={usernameInputRef}
+              name="username"
+              placeholder="Username"
+              type="text"
+              required
+            />
+            {usernameError ? <p className="error">{usernameError}</p> : null}
+          </div>
 
-        <button>Signup</button>
-      </form>
-      <p>
-        Already have an account? <Link to="/login">Login</Link>
-      </p>
+          <div className="input-container">
+            <label>Email</label>
+            <input
+              className="auth-input"
+              ref={emailInputRef}
+              name="email"
+              placeholder="Email"
+              type="email"
+              required
+            />
+            {emailError ? <p className="error">{emailError}</p> : null}
+          </div>
+          <div className="input-container">
+            <label>Password</label>
+            <input
+              className="auth-input"
+              ref={passwordInputRef}
+              name="password"
+              placeholder="Password"
+              type="password"
+              required
+            />
+            {passwordError ? <p className="error">{passwordError}</p> : null}
+          </div>
+
+          {serverError ? <p className="error">{serverError}</p> : null}
+
+          <button className="auth-button">Signup</button>
+        </form>
+        <p>
+          Already have an account? <Link to="/login">Login</Link>
+        </p>
+      </div>
     </div>
   );
 }

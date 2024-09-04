@@ -1,12 +1,25 @@
 import React from 'react';
 import { authActions } from '../../store/store';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-
+import user from '../../images/user.png';
+import './AuthStyles.css';
 export default function Logout() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  function handleLogout() {
+  const auth = useSelector((state) => state.auth);
+
+  async function handleLogout() {
+    await fetch('http://localhost:4000/auth/logout', {
+      method: 'POST',
+      body: JSON.stringify({
+        token: auth.refreshToken,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
     dispatch(authActions.logout());
     localStorage.setItem('accessToken', null);
     localStorage.setItem('refreshToken', null);
@@ -14,7 +27,12 @@ export default function Logout() {
   }
   return (
     <div>
-      <button onClick={handleLogout}>Logout</button>
+      <img
+        onClick={handleLogout}
+        className="person"
+        src={user}
+        alt="user-pic"
+      />{' '}
     </div>
   );
 }

@@ -39,7 +39,7 @@ function Home() {
         </p>
         {!auth.isLoggedin && (
           <Link className="get-started" to="/signup">
-            Get Started ...
+            Get Started
           </Link>
         )}
       </div>

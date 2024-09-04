@@ -76,11 +76,19 @@ const routes = [
   },
   {
     path: '/signup',
-    element: <Signup />,
+    element: (
+      <Element>
+        <Signup />
+      </Element>
+    ),
   },
   {
     path: '/login',
-    element: <Login />,
+    element: (
+      <Element>
+        <Login />
+      </Element>
+    ),
   },
   {
     path: '/resources',

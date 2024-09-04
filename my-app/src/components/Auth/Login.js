@@ -1,13 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { authActions } from '../../store/store';
-
+import './AuthStyles.css';
 export default function Login() {
   const [verificationError, setVerificationError] = useState(false);
   const [credentialError, setCredentialError] = useState(false);
   const [serverError, setServerError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -15,6 +14,12 @@ export default function Login() {
 
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
+  useEffect(() => {
+    if (auth.isLoggedin) {
+      navigate('/');
+    }
+  }, [auth.isLoggedin, navigate]);
+
   async function submitHandler(e) {
     e.preventDefault();
 
@@ -22,7 +27,6 @@ export default function Login() {
     const password = passwordInputRef.current.value;
 
     try {
-      setIsLoading(true);
       const response = await fetch('http://localhost:4000/auth/login', {
         method: 'POST',
         body: JSON.stringify({
@@ -33,8 +37,6 @@ export default function Login() {
           'Content-Type': 'application/json',
         },
       });
-
-      setIsLoading(false);
 
       const data = await response.json();
 
@@ -82,38 +84,45 @@ export default function Login() {
   }
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={submitHandler}>
-        <label>Email</label>
-        <input
-          ref={emailInputRef}
-          name="email"
-          placeholder="Email"
-          type="email"
-          required
-        />
-        <label>Password</label>
-        <input
-          ref={passwordInputRef}
-          name="password"
-          placeholder="Password"
-          type="password"
-          required
-        />
-        {credentialError ? (
-          <p style={{ color: 'red' }}>{credentialError}</p>
-        ) : null}
-        {verificationError ? (
-          <p style={{ color: 'red' }}>{verificationError}</p>
-        ) : null}
-        {serverError ? <p style={{ color: 'red' }}>{serverError}</p> : null}
+    <div className="outer-form-container">
+      <div className="form-container">
+        <h2>Login</h2>
+        <form onSubmit={submitHandler}>
+          <div className="input-container">
+            <label>Email</label>
+            <input
+              className="auth-input"
+              ref={emailInputRef}
+              name="email"
+              placeholder="Email"
+              type="email"
+              required
+            />
+          </div>
 
-        {!isLoading ? <button>Login</button> : <p>Logging In ...</p>}
-      </form>
-      <p>
-        Dont have an account? <Link to="/signup">Signup</Link>
-      </p>
+          <div className="input-container">
+            <label>Password</label>
+            <input
+              className="auth-input"
+              ref={passwordInputRef}
+              name="password"
+              placeholder="Password"
+              type="password"
+              required
+            />
+          </div>
+          {credentialError ? <p className="error">{credentialError}</p> : null}
+          {verificationError ? (
+            <p className="error">{verificationError}</p>
+          ) : null}
+          {serverError ? <p className="error">{serverError}</p> : null}
+
+          <button className="auth-button">Login</button>
+        </form>
+        <p>
+          Dont have an account? <Link to="/signup">Signup</Link>
+        </p>
+      </div>
     </div>
   );
 }
