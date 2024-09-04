@@ -54,6 +54,10 @@ function Exam( {generalExam}) {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
+  useEffect(()=>{
+    console.log("load")
+  },[])
+
 
   // Timer effect
   useEffect(() => {

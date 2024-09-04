@@ -1,20 +1,21 @@
-import brain from "../../images/cute-brain.png";
-import saveGrade7Details from "../Resources/ElementaryResources/Grade7/Details";
-import saveGrade8Details from "../Resources/ElementaryResources/Grade8/Details";
-import saveGrade10Details from "../Resources/HighSchoolResources/Grade10/Details";
-import saveGrade9Details from "../Resources/HighSchoolResources/Grade9/Details";
-import "./Home.css";
-import { useEffect } from "react";
+import { Link } from 'react-router-dom';
+import brain from '../../images/cute-brain.png';
+import saveGrade7Details from '../Resources/ElementaryResources/Grade7/Details';
+import saveGrade8Details from '../Resources/ElementaryResources/Grade8/Details';
+import saveGrade10Details from '../Resources/HighSchoolResources/Grade10/Details';
+import saveGrade9Details from '../Resources/HighSchoolResources/Grade9/Details';
+import './Home.css';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 function Home() {
+  useEffect(() => {
+    saveGrade7Details();
+    saveGrade8Details();
+    saveGrade9Details();
+    saveGrade10Details();
+  }, []);
+  const auth = useSelector((state) => state.auth);
 
-  useEffect(()=>{
-    saveGrade7Details()
-    saveGrade8Details()
-    saveGrade9Details()
-    saveGrade10Details()
-    
-  },[])
-  
   return (
     <div className="landing-container">
       <div className="greeting">
@@ -36,9 +37,11 @@ function Home() {
           your go-to resource. Join us in our mission to make learning fun,
           effective, and accessible for everyone.
         </p>
-        <a className="get-started" href="">
-          Get Started ...
-        </a>
+        {!auth.isLoggedin && (
+          <Link className="get-started" to="/signup">
+            Get Started ...
+          </Link>
+        )}
       </div>
 
       <div className="landing-image-container">

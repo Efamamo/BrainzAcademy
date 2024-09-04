@@ -1,7 +1,7 @@
-import './ElemetarySubjectDetail.css'
-import { Link, useParams } from "react-router-dom";
-import pdf from "../../../images/pdf2.png";
-import download from "../../../images/downloading.png";
+import './ElemetarySubjectDetail.css';
+import { Link, useParams } from 'react-router-dom';
+import pdf from '../../../images/pdf2.png';
+import download from '../../../images/downloading.png';
 import { useEffect } from 'react';
 
 function openBook(grade, subject) {
@@ -15,14 +15,13 @@ function ElementarySubjectDetail() {
 
   const handleDownload = (e) => {
     e.preventDefault();
-    const link = document.createElement("a");
+    const link = document.createElement('a');
     link.href = pdfPath;
     link.download = `${grade}-${subject}.pdf`;
     link.click();
   };
-  
-  const currentSubject = JSON.parse(localStorage.getItem(`${grade}${subject}`));
 
+  const currentSubject = JSON.parse(localStorage.getItem(`${grade}${subject}`));
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -30,30 +29,30 @@ function ElementarySubjectDetail() {
 
   return (
     <div className="outer-detail-container">
-      <div className="detail-container" style={{ marginBottom: "30px" }}>
+      <div className="detail-container" style={{ marginBottom: '30px' }}>
         <h2 className="detail-intro">
           <strong>
-            Ethiopian Grade {currentSubject.summery.grade} (New Curriculum) {currentSubject.title}{" "}
-            Textbook
+            Ethiopian Grade {currentSubject.summery.grade} (New Curriculum){' '}
+            {currentSubject.title} Textbook
           </strong>
         </h2>
         <h3 className="detail-intro">
           <strong>{currentSubject.description}</strong>
         </h3>
-        <img src={currentSubject.image}/>
-       
+        <img src={currentSubject.image} />
+
         <div className="chapters">
           <h2>Chapters in this textbook</h2>
 
-          <h3>This Textbook contains {currentSubject.chapters.length} chapters</h3>
+          <h3>
+            This Textbook contains {currentSubject.chapters.length} chapters
+          </h3>
           <ul>
             {currentSubject.chapters.map((chapter) => (
               <li key={chapter}>{chapter}</li>
             ))}
           </ul>
         </div>
-        
-      
 
         <h2 className="detail-intro">Book Summary</h2>
 
@@ -92,17 +91,17 @@ function ElementarySubjectDetail() {
             onClick={() => {
               openBook(grade, subject);
             }}
-            style={{ margin: "auto" }}
+            style={{ margin: 'auto' }}
             id="download-button"
           >
-            <img style={{ width: "20px" }} src={pdf} /> Read Book
+            <img style={{ width: '20px' }} src={pdf} /> Read Book
           </button>
           <button
             onClick={handleDownload}
-            style={{ margin: "auto" }}
+            style={{ margin: 'auto' }}
             id="download-button"
           >
-            <img style={{ width: "20px" }} src={download} /> Download
+            <img style={{ width: '20px' }} src={download} /> Download
           </button>
         </div>
       </div>
