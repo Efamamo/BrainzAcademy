@@ -1,10 +1,11 @@
 .landing-container {
-  height: 60vh;
+  height: 65vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 100px;
+  margin: 0 100px;
 }
 
 .landing-container .greeting {
@@ -37,19 +38,22 @@
 }
 
 .get-started {
-  display: block;
-  width: 130px;
+  display: inline-block; /* Aligns button nicely */
+  width: auto; /* Automatic width to fit content */
+  min-width: 120px; /* Ensures button is not too small */
   text-align: center;
-  background-color: #007bff;
-  color: white;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
-  box-shadow: 0 4px 8px rgba(109, 137, 140, 0.4);
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  background-color: #007bff; /* Primary color */
+  color: #ffffff; /* White text color */
+  padding: 8px 16px; /* Balanced padding for a cleaner look */
+  border-radius: 4px; /* Slightly rounded corners */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Light shadow for subtle depth */
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease; /* Smooth transitions */
+  text-decoration: none; /* Remove underline if used with <a> element */
 }
 
 .get-started:hover {
-  opacity: 0.95;
-  transform: scale(1.02);
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: scale(1.02); /* Slightly enlarges on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly more pronounced shadow on hover */
 }

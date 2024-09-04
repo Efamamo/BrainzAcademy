@@ -122,6 +122,9 @@ export default function Login() {
         <p>
           Dont have an account? <Link to="/signup">Signup</Link>
         </p>
+        <p className="auth-links">
+          <Link to="/forgot-password">Forgot Password?</Link>
+        </p>
       </div>
     </div>
   );

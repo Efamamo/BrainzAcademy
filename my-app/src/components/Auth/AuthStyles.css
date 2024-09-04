@@ -1,5 +1,5 @@
 .outer-form-container {
-  height: 60vh;
+  height: 62vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -65,4 +65,48 @@
 .person {
   width: 35px;
   cursor: pointer;
+}
+
+.verification-wrapper {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa; /* Softer light background */
+}
+
+.verification-box {
+  width: 420px;
+  padding: 35px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Slightly deeper shadow */
+  text-align: center;
+}
+
+.verification-box h2 {
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.verification-box p {
+  color: #666;
+  margin-bottom: 18px;
+  line-height: 1.7;
+}
+
+.verification-box a {
+  color: #0069d9;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.verification-box a:hover {
+  text-decoration: underline;
+}
+
+.verification-box p:last-child {
+  margin-top: 35px;
+  font-size: 15px;
+  color: #888;
 }

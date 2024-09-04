@@ -8,6 +8,7 @@ export default function Signup() {
   const [emailError, setEmailError] = useState(false);
   const [usernameError, setUsernameError] = useState(false);
   const [serverError, setServerError] = useState(false);
+
   const navigate = useNavigate();
 
   const auth = useSelector((state) => state.auth);
@@ -46,7 +47,7 @@ export default function Signup() {
         setPasswordError(false);
         setUsernameError(false);
         setServerError(false);
-        alert('Verify Your Email !!');
+        navigate('/check-email');
       } else {
         console.log(data);
         if (!data.errors['password']) {
@@ -84,6 +85,7 @@ export default function Signup() {
     <div className="outer-form-container">
       <div className="form-container">
         <h2>Signup</h2>
+
         <form onSubmit={submitHandler}>
           <div className="input-container">
             <label>Username</label>
@@ -129,6 +131,24 @@ export default function Signup() {
         </form>
         <p>
           Already have an account? <Link to="/login">Login</Link>
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export function CheckEmail() {
+  return (
+    <div className="verification-wrapper">
+      <div className="verification-box">
+        <h2>Email Verification Required</h2>
+        <p>
+          We've sent a verification link to your email address. Please check
+          your inbox and click on the link to verify your account.
+        </p>
+        <p>
+          If you've already verified your email,{' '}
+          <Link to="/login">Proceed To Login</Link>.
         </p>
       </div>
     </div>

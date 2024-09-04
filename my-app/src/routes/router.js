@@ -23,9 +23,11 @@ import HighSchoolSubjectDetail from '../components/Resources/HighSchoolResources
 import Grade10 from '../components/Resources/HighSchoolResources/Grade10/Grade10';
 import Grade11 from '../components/Resources/HighSchoolResources/Grade11/Grade11';
 import Grade12 from '../components/Resources/HighSchoolResources/Grade12/Grade12';
-import Signup from '../components/Auth/Signup';
+import Signup, { CheckEmail } from '../components/Auth/Signup';
 import Login from '../components/Auth/Login';
 import { useSelector } from 'react-redux';
+import ForgotPassword from '../components/Auth/ForgotPassword';
+import ResetPassword from '../components/Auth/ResetPassword';
 
 function Element(props) {
   const auth = useSelector((state) => state.auth);
@@ -81,6 +83,18 @@ const routes = [
         <Signup />
       </Element>
     ),
+  },
+  {
+    path: '/check-email',
+    element: <CheckEmail />,
+  },
+  {
+    path: '/forgot-password',
+    element: <ForgotPassword />,
+  },
+  {
+    path: '/reset-password',
+    element: <ResetPassword />,
   },
   {
     path: '/login',

@@ -1,146 +1,142 @@
-.detail-container{
-    width: 50%;
-    margin: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 40px 20px;
+.detail-container {
+  width: 50%;
+  margin: 100px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 40px 20px;
 }
 
-.detail-intro{
-    text-align: center;
+.detail-intro {
+  text-align: center;
 }
 
-.detail-container h1{
-    text-align: center;
+.detail-container h1 {
+  text-align: center;
 }
 
-.detail-container li{
-    list-style: none;
+.detail-container li {
+  list-style: none;
 }
 
-.detail-summery{
-    display: flex;
-    justify-content: space-evenly;
-    margin: 30px 0;
-    background-color: white;
+.detail-summery {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 30px 0;
+  background-color: white;
 }
 
-.chapters{
-    background-color: white;
-    padding: 10px 20px;
-}.outer-detail-container{
-    display: flex;
-    justify-content: space-evenly;
-    margin: 100px 0;
-    align-items: start;
+.chapters {
+  background-color: white;
+  padding: 10px 20px;
+}
+.outer-detail-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 100px 0;
+  align-items: start;
 }
 
-.sidebar{
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 30%;
-
+.sidebar {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 30%;
 }
 
-img{
-    width: 100%;
+img {
+  width: 100%;
 }
 
-.sidebar a{
-    color: black;
+.sidebar a {
+  color: black;
 }
 
-.sidebar h2{
-    text-align: center;
+.sidebar h2 {
+  text-align: center;
 }
-.detail-container{
-    width: 55%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 40px 20px;
-}
-
-.detail-intro{
-    text-align: center;
+.detail-container {
+  width: 55%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 40px 20px;
 }
 
-.detail-container h1{
-    text-align: center;
+.detail-intro {
+  text-align: center;
 }
 
-.detail-container li{
-    list-style: none;
-    font-size: 18px;
-    padding: 3px 0;
-    color: rgb(14, 14, 62);
+.detail-container h1 {
+  text-align: center;
 }
 
-.detail-summery{
-    display: flex;
-    justify-content: space-evenly;
-    margin: 30px 0;
-    background-color: white;
+.detail-container li {
+  list-style: none;
+  font-size: 18px;
+  padding: 3px 0;
+  color: rgb(14, 14, 62);
 }
 
-.chapters{
-    background-color: white;
-    padding: 10px 20px;
+.detail-summery {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 30px 0;
+  background-color: white;
 }
 
-.bottom-detail{
-    display: flex;
-    gap: 10px;
-    justify-content: center;
+.chapters {
+  background-color: white;
+  padding: 10px 20px;
 }
 
-.related-links{
-    display: flex;
-    margin-left: 100px;
-    gap: 30px;
-    background-color: white;
-    margin: 20px 50px;
-    padding: 5px 65px;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: ease 1.2s;
-
-
+.bottom-detail {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
 }
 
-.related-links img{
-    width: 30px;
-    height: 30px;
+.related-links {
+  display: flex;
+  margin-left: 100px;
+  gap: 30px;
+  background-color: white;
+  margin: 20px 50px;
+  padding: 5px 65px;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: ease 1.2s;
 }
 
-.related-links:hover{
-    transform: scale(1.02);
-
-}
-.detail-container{
-    width: 50%;
-    margin: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 40px 20px;
+.related-links img {
+  width: 30px;
+  height: 30px;
 }
 
-.detail-intro{
-    text-align: center;
+.related-links:hover {
+  transform: scale(1.02);
+}
+.detail-container {
+  width: 50%;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 40px 20px;
 }
 
-.detail-container h1{
-    text-align: center;
+.detail-intro {
+  text-align: center;
 }
 
-.detail-container li{
-    list-style: none;
+.detail-container h1 {
+  text-align: center;
 }
 
-.detail-summery{
-    display: flex;
-    justify-content: space-evenly;
-    margin: 30px 0;
-    background-color: white;
+.detail-container li {
+  list-style: none;
 }
 
-.chapters{
-    background-color: white;
-    padding: 10px 20px;
+.detail-summery {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 30px 0;
+  background-color: white;
 }
 
+.chapters {
+  background-color: white;
+  padding: 10px 20px;
+}

@@ -15,6 +15,7 @@ function ElementarySubjectDetail() {
 
   const handleDownload = (e) => {
     e.preventDefault();
+    console.log(pdfPath);
     const link = document.createElement('a');
     link.href = pdfPath;
     link.download = `${grade}-${subject}.pdf`;
