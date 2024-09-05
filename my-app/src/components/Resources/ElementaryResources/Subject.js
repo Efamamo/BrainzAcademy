@@ -1,9 +1,7 @@
 import './Subject.css';
 import download from '../../../images/downloading.png';
 function Subject({ number, title, image, grade, subject }) {
-  const pdfPath = `${
-    process.env.PUBLIC_URL
-  }/books/grade${grade}/grade${grade}-${title.toLowerCase()}.pdf`;
+  const pdfPath = `${process.env.PUBLIC_URL}/books/grade${grade}/grade${grade}-${subject}.pdf`;
 
   const handleDownload = (e) => {
     console.log(pdfPath);

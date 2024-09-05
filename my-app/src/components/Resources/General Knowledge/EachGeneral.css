@@ -15,6 +15,10 @@
 .wiki {
   margin-top: 20px;
 }
+
+.wiki a {
+  color: #007bff;
+}
 .each-general {
   display: flex;
   justify-content: space-evenly;

@@ -2,9 +2,9 @@ import React from 'react';
 import { authActions } from '../../store/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import user from '../../images/user.png';
+import logout from '../../images/logout.png';
 import './AuthStyles.css';
-export default function Logout() {
+export default function Logout({ onLogout }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const auth = useSelector((state) => state.auth);
@@ -23,16 +23,12 @@ export default function Logout() {
     dispatch(authActions.logout());
     localStorage.setItem('accessToken', null);
     localStorage.setItem('refreshToken', null);
-    navigate('/');
+    onLogout();
+    navigate('/login');
   }
   return (
-    <div>
-      <img
-        onClick={handleLogout}
-        className="person"
-        src={user}
-        alt="user-pic"
-      />{' '}
+    <div onClick={handleLogout} className="manage-each">
+      <img className="person" src={logout} alt="user-pic" /> <p>Logout</p>
     </div>
   );
 }

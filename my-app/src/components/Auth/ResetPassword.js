@@ -42,8 +42,8 @@ export default function ResetPassword() {
         setTokenError(false);
         setNewPasswordError(false);
         setServerError(false);
+        alert('Your password has been reset successfully.');
         navigate('/login');
-        // Optionally, redirect the user to the login page or another page
       } else {
         const data = await response.json();
         if (data['newPassword']) {

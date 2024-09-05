@@ -49,3 +49,55 @@
   width: 35px;
   cursor: pointer;
 }
+
+/* Sliding container */
+.side-container {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  right: -300px; /* Hidden off the screen initially (from right) */
+  width: 250px;
+  height: 100%;
+  background-color: #f4f4f4;
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.4s ease; /* Smooth transition */
+  padding: 20px;
+}
+
+.side-container.open {
+  right: 0; /* Slide in from the right when open */
+}
+
+/* Close button for the sliding container */
+.side-container img.close-icon {
+  width: 30px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* Example styles inside the container */
+.side-container h2 {
+  margin-top: 0;
+}
+
+.side-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-container .manage-each {
+  display: flex;
+  margin: 15px 0;
+  cursor: pointer;
+  align-items: center;
+  gap: 20px;
+}
+.side-container .manage-each img {
+  width: 30px;
+  height: 30px;
+}
+.manage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

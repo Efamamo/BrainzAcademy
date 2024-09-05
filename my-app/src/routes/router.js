@@ -28,6 +28,8 @@ import Login from '../components/Auth/Login';
 import { useSelector } from 'react-redux';
 import ForgotPassword from '../components/Auth/ForgotPassword';
 import ResetPassword from '../components/Auth/ResetPassword';
+import SettingsPage from '../components/Settings/Settings';
+import ChangePassword from '../components/Auth/ChangePassword';
 
 function Element(props) {
   const auth = useSelector((state) => state.auth);
@@ -255,6 +257,22 @@ const routes = [
     element: (
       <Element name="protected">
         <Grade12 />
+      </Element>
+    ),
+  },
+  {
+    path: '/settings',
+    element: (
+      <Element name="protected">
+        <SettingsPage />
+      </Element>
+    ),
+  },
+  {
+    path: '/change-password',
+    element: (
+      <Element name="protected">
+        <ChangePassword />
       </Element>
     ),
   },

@@ -55,6 +55,9 @@ const authSlice = createSlice({
       state.accessToken = '';
       state.refreshToken = '';
     },
+    refresh(state, action) {
+      state.accessToken = action.payload.accessToken;
+    },
   },
 });
 

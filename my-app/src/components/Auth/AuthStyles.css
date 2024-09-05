@@ -45,7 +45,7 @@
 }
 .error {
   color: red;
-  margin: 1px;
+  margin: 0;
 }
 .input-container {
   display: flex;
