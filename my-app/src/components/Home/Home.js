@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import brain from '../../images/cute-brain.png';
 import './Home.css';
 import { useSelector } from 'react-redux';
+import checkoutToChapa from '../Chapa/test';
 function Home() {
   const auth = useSelector((state) => state.auth);
 

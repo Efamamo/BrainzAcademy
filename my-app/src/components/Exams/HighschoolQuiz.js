@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 import Exam from './Exam';
-import generalExam from './questions/generalQuestions';
+import highSchoolQuizQuestions from './questions/highschool';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-function GeneralKnowledgeQuiz() {
+function HighSchoolQuiz() {
   const navigate = useNavigate();
   const auth = useSelector((state) => state.auth);
   useEffect(() => {
@@ -11,6 +11,6 @@ function GeneralKnowledgeQuiz() {
       navigate('/');
     }
   }, [auth.isLoggedin, navigate]);
-  return <Exam generalExam={generalExam} quitExam="general" />;
+  return <Exam generalExam={highSchoolQuizQuestions} quitExam="highschool" />;
 }
-export default GeneralKnowledgeQuiz;
+export default HighSchoolQuiz;

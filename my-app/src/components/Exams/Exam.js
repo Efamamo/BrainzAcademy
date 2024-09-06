@@ -8,7 +8,7 @@ import { examActions } from '../../store/store';
 import { useNavigate } from 'react-router-dom';
 import quit from '../../images/icons/power-off-svgrepo-com (2).svg';
 
-function Exam({ generalExam }) {
+function Exam({ generalExam, quitExam }) {
   const dispatch = useDispatch();
   const exam = useSelector((state) => state.exam);
   const { solvedCount, correctCount, timeLeft } = exam;
@@ -79,7 +79,7 @@ function Exam({ generalExam }) {
   };
 
   const quitQuiz = () => {
-    navigate('/exams/examdesc', { replace: true });
+    navigate(`/exams/${quitExam}-desc`, { replace: true });
   };
 
   return (

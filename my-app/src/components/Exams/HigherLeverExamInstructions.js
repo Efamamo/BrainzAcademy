@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-function QuizInstructions() {
+export default function HighLevelExamInstructions() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -15,7 +15,7 @@ function QuizInstructions() {
         height: '58vh',
       }}
     >
-      <h1>Welcome to the General Knowledge Quiz Zone!</h1>
+      <h1>Welcome to the HigherLevel Quiz Zone!</h1>
       <p>
         Are you ready to test your knowledge and skills? This quiz will take you
         through a series of 60 challenging questions across various topics. Each
@@ -41,7 +41,7 @@ function QuizInstructions() {
         <li>You have two hours to finish the Quiz</li>
       </ul>
       <p>Good luck, and have fun!</p>
-      <Link to="/exams/exam">
+      <Link to="/exams/higher-level">
         <button
           style={{
             padding: '10px 20px',
@@ -59,5 +59,3 @@ function QuizInstructions() {
     </div>
   );
 }
-
-export default QuizInstructions;

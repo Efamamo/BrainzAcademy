@@ -16,7 +16,7 @@ import Grade7 from '../components/Resources/ElementaryResources/Grade7/Grade7';
 import Grade8 from '../components/Resources/ElementaryResources/Grade8/Grade8';
 import ElementarySubjectDetail from '../components/Resources/ElementaryResources/ElemetarySubjectDetail';
 import Exams from '../components/Exams/Exams';
-import QuizInstructions from '../components/Exams/ExamInstructions';
+import QuizInstructions from '../components/Exams/GKExamInstructions';
 import GeneralKnowledgeQuiz from '../components/Exams/GeneralKnowledgeQuiz';
 import Grade9 from '../components/Resources/HighSchoolResources/Grade9/Grade9';
 import HighSchoolSubjectDetail from '../components/Resources/HighSchoolResources/HighSchoolSubjectDetails';
@@ -46,6 +46,12 @@ import Env from '../components/Resources/General Knowledge/Environment/Environme
 import Religion from '../components/Resources/General Knowledge/Religion/Religion';
 import Inventions from '../components/Resources/General Knowledge/Inventions/Inventions';
 import Personalities from '../components/Resources/General Knowledge/Personalities/Personalities';
+import PrimaryQuiz from '../components/Exams/PrimaryQuiz';
+import PrimaryExamInstructions from '../components/Exams/PrimaryExamInstructions';
+import HighschoolExamInstructions from '../components/Exams/HighschoolExamInstructions';
+import HighLevelExamInstructions from '../components/Exams/HigherLeverExamInstructions';
+import HighSchoolQuiz from '../components/Exams/HighschoolQuiz';
+import HighLevelQuiz from '../components/Exams/HighLevelQuiz';
 
 function Element(props) {
   const auth = useSelector((state) => state.auth);
@@ -139,14 +145,42 @@ const routes = [
     ),
   },
   {
-    path: '/exams/examdesc',
+    path: '/exams/general-desc',
     element: (
       <Element name="protected">
         <QuizInstructions />
       </Element>
     ),
   },
-  { path: '/exams/exam', element: <GeneralKnowledgeQuiz /> },
+  {
+    path: '/exams/primary-desc',
+    element: (
+      <Element name="protected">
+        <PrimaryExamInstructions />
+      </Element>
+    ),
+  },
+  {
+    path: '/exams/highschool-desc',
+    element: (
+      <Element name="protected">
+        <HighschoolExamInstructions />
+      </Element>
+    ),
+  },
+  {
+    path: '/exams/highlevel-desc',
+    element: (
+      <Element name="protected">
+        <HighLevelExamInstructions />
+      </Element>
+    ),
+  },
+  { path: '/exams/general-knowledge', element: <GeneralKnowledgeQuiz /> },
+  { path: '/exams/primary', element: <PrimaryQuiz /> },
+  { path: '/exams/high-school', element: <HighSchoolQuiz /> },
+  { path: '/exams/higher-level', element: <HighLevelQuiz /> },
+
   {
     path: '/resources/elementary',
     element: (
