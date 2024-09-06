@@ -8,6 +8,7 @@ export default async function refreshToken() {
       body: JSON.stringify({ token: refreshToken }),
       headers: { 'Content-Type': 'application/json' },
     });
+    
 
     if (response.status === 200) {
       const data = await response.json();

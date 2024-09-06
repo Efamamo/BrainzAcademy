@@ -46,6 +46,8 @@ export default function Login() {
         setVerificationError(false);
         localStorage.setItem('accessToken', data.accessToken);
         localStorage.setItem('refreshToken', data.refreshToken);
+        localStorage.setItem('isLoggedIn', true);
+
         dispatch(
           authActions.login({
             accessToken: data.accessToken,

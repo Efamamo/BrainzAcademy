@@ -1,19 +1,54 @@
 import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Logout from '../Auth/Logout';
 import user from '../../images/user.png';
 import close from '../../images/close.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import profile from '../../images/profile.png';
 import settings from '../../images/settings.png';
+import verify from '../Auth/verify';
+import { authActions } from '../../store/store';
+import saveGrade7Details from '../Resources/ElementaryResources/Grade7/Details';
+import saveGrade8Details from '../Resources/ElementaryResources/Grade8/Details';
+import saveGrade9Details from '../Resources/HighSchoolResources/Grade9/Details';
+import saveGrade10Details from '../Resources/HighSchoolResources/Grade10/Details';
+import saveGrade11Details from '../Resources/HighSchoolResources/Grade11/Details';
+import saveGrade12Details from '../Resources/HighSchoolResources/Grade12/Details';
 function Header() {
   const auth = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const verifyAuth = async () => {
+      const refreshToken = localStorage.getItem('refreshToken');
+      if (refreshToken) {
+        const valid = await verify(refreshToken);
+        if (valid) {
+          localStorage.setItem('isLoggedIn', true);
+        } else {
+          localStorage.removeItem('isLoggedIn');
+        }
+      }
+    };
+
+    verifyAuth();
+  }, [dispatch]);
+  useEffect(() => {
+    saveGrade7Details();
+    saveGrade8Details();
+    saveGrade9Details();
+    saveGrade10Details();
+    saveGrade11Details();
+    saveGrade12Details();
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  console.log(auth.isLoggedin);
   return (
     <div className="title">
       <h1 className="logo">BrainzAcademy</h1>
@@ -69,7 +104,6 @@ function Header() {
           </div>
 
           <ul>
-           
             <div className="manage-each" onClick={toggleMenu}>
               <img src={settings} alt="settings" />
               <li>

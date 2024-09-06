@@ -1,4 +1,5 @@
 import { createSlice, configureStore } from '@reduxjs/toolkit';
+import verify from '../components/Auth/verify';
 
 const initialState = {
   solvedCount: 0,
@@ -10,7 +11,7 @@ const initialState = {
 const initialAuthState = {
   accessToken: localStorage.getItem('accessToken'),
   refreshToken: localStorage.getItem('refreshToken'),
-  isLoggedin: localStorage.getItem('accessToken') != 'null',
+  isLoggedin: localStorage.getItem('isLoggedIn'),
 };
 
 const examSlice = createSlice({
@@ -57,6 +58,9 @@ const authSlice = createSlice({
     },
     refresh(state, action) {
       state.accessToken = action.payload.accessToken;
+    },
+    setLoggedin(state, action) {
+      state.isLoggedin = action.payload.isLoggedin;
     },
   },
 });

@@ -1,26 +1,31 @@
-.books{
-    margin: 50px auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: space-evenly;
-}
-.books>p{
-    width: 90%;
-    margin: auto;
-}
-.grade{
-    width: 80%;
-    margin: auto;
+.grade {
+  width: 80%;
+  margin: auto;
 }
 
-.grade h2{
-    text-align: center;
-    margin-top: 40px;
-    color: rgb(4, 4, 64);
+.grade > div {
+  padding-left: 100px;
+}
+.grade .books {
+  margin: 50px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-evenly;
+  padding-left: 0;
 }
 
-.books a{
-    color: black;
+.books > p {
+  width: 90%;
+  margin: auto;
 }
 
+.grade h2 {
+  text-align: center;
+  margin-top: 40px;
+  color: rgb(4, 4, 64);
+}
+
+.books a {
+  color: black;
+}

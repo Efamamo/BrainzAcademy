@@ -30,6 +30,22 @@ import ForgotPassword from '../components/Auth/ForgotPassword';
 import ResetPassword from '../components/Auth/ResetPassword';
 import SettingsPage from '../components/Settings/Settings';
 import ChangePassword from '../components/Auth/ChangePassword';
+import Maths from '../components/Resources/General Knowledge/Maths/Maths';
+import Technology from '../components/Resources/General Knowledge/Technology/Technology';
+import ArtAndMusic from '../components/Resources/General Knowledge/ArtsMusic/ArtsMusic';
+import Sports from '../components/Resources/General Knowledge/Sports/Sports';
+import Philosophy from '../components/Resources/General Knowledge/Philosophy/Philosophy';
+import Politics from '../components/Resources/General Knowledge/Politics/Politics';
+import Economics from '../components/Resources/General Knowledge/Economics/Economics';
+import Language from '../components/Resources/General Knowledge/Languagee/Languages';
+import CurrentEvents from '../components/Resources/General Knowledge/CurrentEvents/CurrentEvents';
+import Health from '../components/Resources/General Knowledge/Health/Health';
+import Culture from '../components/Resources/General Knowledge/Culture/Culture';
+import Astronomy from '../components/Resources/General Knowledge/Astronomy/Astronomy';
+import Env from '../components/Resources/General Knowledge/Environment/Environment';
+import Religion from '../components/Resources/General Knowledge/Religion/Religion';
+import Inventions from '../components/Resources/General Knowledge/Inventions/Inventions';
+import Personalities from '../components/Resources/General Knowledge/Personalities/Personalities';
 
 function Element(props) {
   const auth = useSelector((state) => state.auth);
@@ -180,6 +196,30 @@ const routes = [
     ),
   },
   {
+    path: '/resources/general-knowledge/maths',
+    element: (
+      <Element name="protected">
+        <Maths />
+      </Element>
+    ),
+  },
+  {
+    path: '/resources/general-knowledge/technology',
+    element: (
+      <Element name="protected">
+        <Technology />
+      </Element>
+    ),
+  },
+  {
+    path: '/resources/general-knowledge/arts',
+    element: (
+      <Element name="protected">
+        <ArtAndMusic />
+      </Element>
+    ),
+  },
+  {
     path: '/resources/general-knowledge/science',
     element: (
       <Element name="protected">
@@ -195,7 +235,110 @@ const routes = [
       </Element>
     ),
   },
-
+  {
+    path: '/resources/general-knowledge/philosophy',
+    element: (
+      <Element name="protected">
+        <Philosophy />
+      </Element>
+    ),
+  },
+  {
+    path: '/resources/general-knowledge/politics',
+    element: (
+      <Element name="protected">
+        <Politics />
+      </Element>
+    ),
+  },
+  {
+    path: '/resources/general-knowledge/economics',
+    element: (
+      <Element name="protected">
+        <Economics />
+      </Element>
+    ),
+  },
+  {
+    path: '/resources/general-knowledge/events',
+    element: (
+      <Element name="protected">
+        <CurrentEvents />
+      </Element>
+    ),
+  },
+  {
+    path: '/resources/general-knowledge/health',
+    element: (
+      <Element name="protected">
+        <Health />
+      </Element>
+    ),
+  },
+  {
+    path: '/resources/general-knowledge/culture',
+    element: (
+      <Element name="protected">
+        <Culture />
+      </Element>
+    ),
+  },
+  {
+    path: '/resources/general-knowledge/astronomy',
+    element: (
+      <Element name="protected">
+        <Astronomy />
+      </Element>
+    ),
+  },
+  {
+    path: '/resources/general-knowledge/env',
+    element: (
+      <Element name="protected">
+        <Env />
+      </Element>
+    ),
+  },
+  {
+    path: '/resources/general-knowledge/religion',
+    element: (
+      <Element name="protected">
+        <Religion />
+      </Element>
+    ),
+  },
+  {
+    path: '/resources/general-knowledge/language',
+    element: (
+      <Element name="protected">
+        <Language />
+      </Element>
+    ),
+  },
+  {
+    path: '/resources/general-knowledge/inventions',
+    element: (
+      <Element name="protected">
+        <Inventions />
+      </Element>
+    ),
+  },
+  {
+    path: '/resources/general-knowledge/personalities',
+    element: (
+      <Element name="protected">
+        <Personalities />
+      </Element>
+    ),
+  },
+  {
+    path: '/resources/general-knowledge/sports',
+    element: (
+      <Element name="protected">
+        <Sports />
+      </Element>
+    ),
+  },
   {
     path: '/resources/elementary/grade7',
     element: (

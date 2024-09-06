@@ -23,6 +23,8 @@ export default function Logout({ onLogout }) {
     dispatch(authActions.logout());
     localStorage.setItem('accessToken', null);
     localStorage.setItem('refreshToken', null);
+    localStorage.removeItem('isLoggedIn');
+
     onLogout();
     navigate('/login');
   }

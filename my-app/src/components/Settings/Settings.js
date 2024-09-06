@@ -73,6 +73,8 @@ const SettingsPage = () => {
       dispatch(authActions.logout());
       localStorage.removeItem('accessToken');
       localStorage.removeItem('refreshToken');
+      localStorage.setItem('isLoggedIn', false);
+
       navigate('/login');
     } else {
       setServerError('Server error occurred.');

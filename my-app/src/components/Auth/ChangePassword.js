@@ -92,34 +92,45 @@ export default function ChangePassword() {
                 dispatch(authActions.logout());
                 localStorage.setItem('accessToken', null);
                 localStorage.setItem('refreshToken', null);
+                localStorage.setItem('isLoggedIn', false);
+
                 navigate('/login');
               }
             }
           }
         } else {
-          const data = await response.json();
+          dispatch(authActions.logout());
+          localStorage.setItem('accessToken', null);
+          localStorage.setItem('refreshToken', null);
+          localStorage.setItem('isLoggedIn', false);
 
-          if (!data.errors['oldPassword']) {
-            setOldPasswordError(false);
-          }
-          if (!data.errors['newPassword']) {
-            setNewPasswordError(false);
-          }
+          navigate('/login');
+        }
+      } else {
+        const data = await response.json();
 
-          for (const error in data.errors) {
-            if (error == 'oldPassword') {
-              console.log('old');
-              setOldPasswordError(data.errors[error]);
-            } else if (error == 'newPassword') {
-              setNewPasswordError(data.errors[error]);
-            } else if (error == 'server') {
-              setServerError('server error');
-            } else {
-              dispatch(authActions.logout());
-              localStorage.setItem('accessToken', null);
-              localStorage.setItem('refreshToken', null);
-              navigate('/login');
-            }
+        if (!data.errors['oldPassword']) {
+          setOldPasswordError(false);
+        }
+        if (!data.errors['newPassword']) {
+          setNewPasswordError(false);
+        }
+
+        for (const error in data.errors) {
+          if (error == 'oldPassword') {
+            console.log('old');
+            setOldPasswordError(data.errors[error]);
+          } else if (error == 'newPassword') {
+            setNewPasswordError(data.errors[error]);
+          } else if (error == 'server') {
+            setServerError('server error');
+          } else {
+            dispatch(authActions.logout());
+            localStorage.setItem('accessToken', null);
+            localStorage.setItem('refreshToken', null);
+            localStorage.setItem('isLoggedIn', false);
+
+            navigate('/login');
           }
         }
       }
