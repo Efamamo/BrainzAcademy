@@ -20,6 +20,10 @@
   margin: auto;
 }
 
+.books a {
+  max-width: 360px;
+}
+
 .grade h2 {
   text-align: center;
   margin-top: 40px;
@@ -28,4 +32,21 @@
 
 .books a {
   color: black;
+}
+
+@media (max-width: 769px) {
+  .grade {
+    width: 100%;
+    margin: 10px;
+  }
+
+  .grade p {
+    width: 90%;
+  }
+  .subject-container {
+    padding: 0;
+  }
+  .books {
+    width: 90%;
+  }
 }

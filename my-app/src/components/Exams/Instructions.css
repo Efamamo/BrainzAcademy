@@ -1,0 +1,29 @@
+.instruction-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #0a4f98;
+  border-radius: 5px;
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+}
+
+.instructions {
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
+  height: 58vh;
+}
+
+@media (max-width: 769px) {
+  .instructions {
+    height: 75vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .instructions {
+    height: 100%;
+    margin: 10px;
+  }
+}

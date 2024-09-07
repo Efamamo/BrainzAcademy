@@ -108,3 +108,12 @@ img {
 .detail-container li {
   list-style: none;
 }
+
+@media (max-width: 769px) {
+  .top-container {
+    padding: 0;
+  }
+  .header-description h3 {
+    display: none;
+  }
+}

@@ -1,42 +1,75 @@
-.each{
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    margin: 50px 20px;
-    padding: 10px;
-    transition: ease 1.2s;
-    cursor: pointer;
+.each {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 50px 20px;
+  padding: 10px;
+  transition: ease 1.2s;
+  cursor: pointer;
 }
-.each img{
-    width: 20%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.general-search{
-    margin-top: 40px;
+.each img {
+  width: 20%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.general-container img{
-    width: 400px;
-} 
-
-.each:hover{
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transform: scale(1.02);
+.general-search {
+  margin-top: 40px;
 }
 
-.each-link{
-    text-decoration: none;
-    color: black;
+.general-container img {
+  width: 400px;
 }
 
-.general-container{
-    margin: 100px 30px 0;  
+.each:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
 }
 
-.interest{
-    margin-left: 30px;
+.each-link {
+  text-decoration: none;
+  color: black;
 }
-.general-container{
-    margin-bottom: 100px;
+
+.general-container {
+  margin: 100px 30px 0;
+}
+
+.interest {
+  margin-left: 30px;
+}
+.general-container {
+  margin-bottom: 100px;
+}
+
+@media (max-width: 1281px) {
+  #root .general-container {
+    margin: 0 30px;
+  }
+}
+
+@media (max-width: 769px) {
+  .each {
+    flex-direction: column;
+    align-items: start;
+  }
+  .each img {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .each {
+    margin: 0;
+    gap: 5px;
+  }
+
+  .each p {
+    display: none;
+  }
+  .each h2 {
+    margin: 1px;
+  }
+  .each img {
+    width: 100%;
+  }
 }

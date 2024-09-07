@@ -1,20 +1,13 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
+import './Instructions.css';
 function QuizInstructions() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div
-      style={{
-        padding: '20px',
-        maxWidth: '700px',
-        margin: 'auto',
-        height: '58vh',
-      }}
-    >
+    <div className="instructions">
       <h1>Welcome to the General Knowledge Quiz Zone!</h1>
       <p>
         Are you ready to test your knowledge and skills? This quiz will take you
@@ -42,19 +35,7 @@ function QuizInstructions() {
       </ul>
       <p>Good luck, and have fun!</p>
       <Link to="/exams/general-knowledge">
-        <button
-          style={{
-            padding: '10px 20px',
-            fontSize: '16px',
-            backgroundColor: '#0a4f98',
-            borderRadius: '5px',
-            display: 'block',
-            width: '200px',
-            margin: '20px auto',
-          }}
-        >
-          Start Quiz
-        </button>
+        <button className="instruction-button">Start Quiz</button>
       </Link>
     </div>
   );

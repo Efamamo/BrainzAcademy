@@ -77,3 +77,12 @@ footer {
 .social-container img {
   width: 20px;
 }
+
+@media (max-width: 769px) {
+  .footer-navigation {
+    display: none;
+  }
+  .footer-container {
+    justify-content: start;
+  }
+}

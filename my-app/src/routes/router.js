@@ -52,6 +52,7 @@ import HighschoolExamInstructions from '../components/Exams/HighschoolExamInstru
 import HighLevelExamInstructions from '../components/Exams/HigherLeverExamInstructions';
 import HighSchoolQuiz from '../components/Exams/HighschoolQuiz';
 import HighLevelQuiz from '../components/Exams/HighLevelQuiz';
+import PdfViewer from '../components/Exams/PdfViewer';
 
 function Element(props) {
   const auth = useSelector((state) => state.auth);
@@ -180,6 +181,7 @@ const routes = [
   { path: '/exams/primary', element: <PrimaryQuiz /> },
   { path: '/exams/high-school', element: <HighSchoolQuiz /> },
   { path: '/exams/higher-level', element: <HighLevelQuiz /> },
+  {path: "/view-pdf/:grade/:subject" ,element: <PdfViewer /> },
 
   {
     path: '/resources/elementary',

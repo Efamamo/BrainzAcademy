@@ -27,7 +27,7 @@
 }
 
 .image-container {
-  width: 30%;
+  width: 400px;
 }
 
 .image-container img {
@@ -72,4 +72,23 @@ a {
 }
 .load-more-btn:hover {
   background-color: #0056b3;
+}
+
+@media (max-width: 1280px) {
+  .image-container {
+    width: 340px;
+  }
+}
+
+@media (max-width: 769px) {
+  .each-general {
+    flex-direction: column;
+  }
+  .each-general > div {
+    width: 100%;
+  }
+
+  .general-container .intro {
+    padding: 0;
+  }
 }

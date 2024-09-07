@@ -52,3 +52,49 @@ button:active {
 .content button {
   background-color: #2196f3;
 }
+
+@media (max-width: 1281px) {
+  .higherLevelBody,
+  .elementaryBody,
+  .highschoolBody {
+    height: 100%;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 100px;
+  }
+
+  .higherLevelBody img,
+  .elementaryBody img,
+  .highschoolBody img {
+    width: 100%;
+    order: 1;
+  }
+
+  .highschoolBody .grades {
+    height: 100%;
+    order: 2;
+  }
+
+  .higherLevelBody .departments {
+    height: 100%;
+    order: 2;
+  }
+
+  .content {
+    height: 100%;
+    order: 2;
+  }
+}
+
+@media (max-width: 769px) {
+  .higherLevelBody,
+  .elementaryBody,
+  .highschoolBody {
+    margin: 20px 20px;
+  }
+
+  .content h1 {
+    font-size: 22px;
+  }
+}

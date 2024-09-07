@@ -1,7 +1,6 @@
 .landing-container {
   height: 65vh;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 100px;
@@ -10,10 +9,6 @@
 
 .landing-container .greeting {
   width: 60%;
-}
-
-.landing-image-container {
-  width: 30%;
 }
 
 .welcome {
@@ -33,7 +28,7 @@
 }
 
 .landing-container img {
-  width: 60%;
+  width: 240px;
   opacity: 0.9;
 }
 
@@ -56,4 +51,33 @@
   background-color: #0056b3; /* Darker shade on hover */
   transform: scale(1.02); /* Slightly enlarges on hover */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly more pronounced shadow on hover */
+}
+
+/* Large desktops and extra-large screens */
+@media (max-width: 1281px) {
+  .landing-container {
+    flex-direction: column;
+    height: 100%;
+    gap: 50px;
+    margin: 0;
+  }
+
+  .landing-container .greeting {
+    width: 80%;
+  }
+
+  .landing-container img {
+    width: 400px;
+  }
+}
+/* Tablets (portrait and landscape) */
+@media (max-width: 769px) {
+  .landing-container .greeting {
+    width: 90%;
+  }
+}
+
+
+/* Mobile phones (portrait and landscape) */
+@media (min-width: 480px) {
 }

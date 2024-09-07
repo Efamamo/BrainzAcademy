@@ -140,3 +140,31 @@ img {
   background-color: white;
   padding: 10px 20px;
 }
+
+@media (max-width: 1280px) {
+  .outer-detail-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .outer-detail-container .detail-container {
+    width: 90%;
+  }
+
+  .outer-detail-container .sidebar {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 769px) {
+  #root .outer-detail-container {
+    margin: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  #root .outer-detail-container {
+    margin: 5px;
+  }
+}

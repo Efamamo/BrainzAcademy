@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import './Header.css';
 import { useDispatch, useSelector } from 'react-redux';
 import Logout from '../Auth/Logout';
@@ -18,8 +18,15 @@ import saveGrade12Details from '../Resources/HighSchoolResources/Grade12/Details
 function Header() {
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [isOpen, setIsOpen] = useState(false);
+
+  const [HisOpen, setHIsOpen] = useState(false);
+
+  const toggleHumburger = () => {
+    setHIsOpen(!HisOpen);
+  };
 
   useEffect(() => {
     const verifyAuth = async () => {
@@ -29,7 +36,22 @@ function Header() {
         if (valid) {
           localStorage.setItem('isLoggedIn', true);
         } else {
+          await fetch('http://localhost:4000/auth/logout', {
+            method: 'POST',
+            body: JSON.stringify({
+              token: auth.refreshToken,
+            }),
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+
+          dispatch(authActions.logout());
+          localStorage.setItem('accessToken', null);
+          localStorage.setItem('refreshToken', null);
           localStorage.removeItem('isLoggedIn');
+
+          navigate('/login');
         }
       }
     };
@@ -48,76 +70,134 @@ function Header() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  console.log(auth.isLoggedin);
+
   return (
-    <div className="title">
-      <h1 className="logo">BrainzAcademy</h1>
-      <ul className="links">
-        <li>
-          <NavLink activeclassname="active" to="/">
-            {' '}
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink activeclassname="active" to="/about">
-            About
-          </NavLink>
-        </li>
-        {auth.isLoggedin && (
-          <>
-            {' '}
-            <li>
-              <NavLink activeclassname="active" to="/resources">
-                Resources
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeclassname="active" to="/exams">
-                Quizzes
-              </NavLink>
-            </li>
-          </>
-        )}
-      </ul>
-
-      {auth.isLoggedin ? (
+    <>
+      <div className="hamburger" onClick={toggleHumburger}>
+        {/* Hamburger Icon */}
+        <span className={isOpen ? 'bar open' : 'bar'}></span>
+        <span className={isOpen ? 'bar open' : 'bar'}></span>
+        <span className={isOpen ? 'bar open' : 'bar'}></span>
+      </div>
+      <div
+        className={`hum-container ${HisOpen ? 'open' : ''}`}
+        onClick={toggleHumburger}
+      >
         <img
-          className="person"
-          onClick={toggleMenu}
-          src={user}
-          alt="person-icon"
+          src={close}
+          alt="close-icon"
+          className="close-hum"
+          onClick={toggleHumburger}
         />
-      ) : (
-        <div></div>
-      )}
-      {auth.isLoggedin ? (
-        <div className={`side-container ${isOpen ? 'open' : ''}`}>
-          <div className="manage-header">
-            <h2>Manage Account</h2>
-            <img
-              src={close}
-              alt="close-icon"
-              className="close-icon"
-              onClick={toggleMenu}
-            />
-          </div>
+        <h1 className="logo">BrainzAcademy</h1>
 
-          <ul>
-            <div className="manage-each" onClick={toggleMenu}>
-              <img src={settings} alt="settings" />
+        <ul className="hum-links">
+          <li>
+            <NavLink activeclassname="active" to="/">
+              {' '}
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink activeclassname="active" to="/about">
+              About
+            </NavLink>
+          </li>
+          {auth.isLoggedin && (
+            <>
+              {' '}
               <li>
-                <Link style={{ color: 'black' }} to="/settings">
-                  Settings
-                </Link>
+                <NavLink activeclassname="active" to="/resources">
+                  Resources
+                </NavLink>
               </li>
+              <li>
+                <NavLink activeclassname="active" to="/exams">
+                  Quizzes
+                </NavLink>
+              </li>
+              <li>
+                <NavLink activeclassname="active" to="/settings">
+                  Settings
+                </NavLink>
+              </li>
+              <li className="logout">
+                <Logout onLogout={toggleMenu} />
+              </li>
+            </>
+          )}
+        </ul>
+      </div>
+
+      <div className="title">
+        <h1 className="logo">BrainzAcademy</h1>
+        <ul className="links">
+          <li>
+            <NavLink activeclassname="active" to="/">
+              {' '}
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink activeclassname="active" to="/about">
+              About
+            </NavLink>
+          </li>
+          {auth.isLoggedin && (
+            <>
+              {' '}
+              <li>
+                <NavLink activeclassname="active" to="/resources">
+                  Resources
+                </NavLink>
+              </li>
+              <li>
+                <NavLink activeclassname="active" to="/exams">
+                  Quizzes
+                </NavLink>
+              </li>
+            </>
+          )}
+        </ul>
+
+        {auth.isLoggedin ? (
+          <img
+            className="person"
+            onClick={toggleMenu}
+            src={profile}
+            alt="person-icon"
+          />
+        ) : (
+          <div></div>
+        )}
+        {auth.isLoggedin ? (
+          <div className={`side-container ${isOpen ? 'open' : ''}`}>
+            <div className="manage-header">
+              <h2>Manage Account</h2>
+              <img
+                src={close}
+                alt="close-icon"
+                className="close-icon"
+                onClick={toggleMenu}
+              />
             </div>
 
-            <Logout onLogout={toggleMenu} />
-          </ul>
-        </div>
-      ) : null}
-    </div>
+            <ul>
+              <div className="manage-each" onClick={toggleMenu}>
+                <img src={settings} alt="settings" />
+                <li>
+                  <Link style={{ color: 'black' }} to="/settings">
+                    Settings
+                  </Link>
+                </li>
+              </div>
+
+              <Logout onLogout={toggleMenu} />
+            </ul>
+          </div>
+        ) : null}
+      </div>
+    </>
   );
 }
 

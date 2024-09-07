@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './Instructions.css';
 
 export default function HighschoolExamInstructions() {
   useEffect(() => {
@@ -7,14 +8,7 @@ export default function HighschoolExamInstructions() {
   }, []);
 
   return (
-    <div
-      style={{
-        padding: '20px',
-        maxWidth: '700px',
-        margin: 'auto',
-        height: '58vh',
-      }}
-    >
+    <div className="instructions">
       <h1>Welcome to the Highschool Quiz Zone!</h1>
       <p>
         Are you ready to test your knowledge and skills? This quiz will take you
@@ -42,19 +36,7 @@ export default function HighschoolExamInstructions() {
       </ul>
       <p>Good luck, and have fun!</p>
       <Link to="/exams/high-school">
-        <button
-          style={{
-            padding: '10px 20px',
-            fontSize: '16px',
-            backgroundColor: '#0a4f98',
-            borderRadius: '5px',
-            display: 'block',
-            width: '200px',
-            margin: '20px auto',
-          }}
-        >
-          Start Quiz
-        </button>
+        <button className="instruction-button">Start Quiz</button>
       </Link>
     </div>
   );

@@ -46,13 +46,18 @@ label.active:active {
   gap: 6px;
   position: absolute;
   right: 130px;
-  top: 115px;
+  top: 95px;
   cursor: pointer;
 }
 
 .quit p {
   color: red;
   font-weight: bold;
+}
+
+.quiz-page > p {
+  width: 80%;
+  margin: 20px auto;
 }
 
 .exam-container {
@@ -75,7 +80,7 @@ label.active:active {
 .pagination-container {
   border: 0.2px solid grey;
   padding: 3px 20px;
-  width: 350px;
+  max-width: 350px;
   text-align: center;
   border-radius: 5px;
   margin: 50px auto;
@@ -141,4 +146,46 @@ label.active:active {
 
 .quiz-page p {
   font-size: 1.15em;
+}
+
+.upper-exam-container {
+  margin: 0 100px;
+}
+
+@media (max-width: 1281px) {
+  .quiz-page {
+    margin: 0;
+  }
+  .exams-cont {
+    margin: 0;
+    width: 100%;
+  }
+  .quit {
+    top: 50px;
+  }
+}
+
+@media (max-width: 769px) {
+  .exams-cont {
+    flex-direction: column;
+  }
+  .exam-card {
+    width: 100%;
+  }
+
+  .quiz-page > p {
+    width: 100%;
+    margin: 0;
+  }
+  .answers {
+    flex-direction: column;
+  }
+  .answer-label {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .upper-exam-container {
+    margin: 15px;
+  }
 }

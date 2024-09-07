@@ -83,7 +83,7 @@ function Exam({ generalExam, quitExam }) {
   };
 
   return (
-    <div style={{ margin: '0 100px' }}>
+    <div className="upper-exam-container">
       <div className="timer">Time Remaining: {formatTime(timeLeft)}</div>
       <div onClick={quitQuiz} className="quit">
         <img style={{ width: '30px' }} src={quit} alt="quit icon" />{' '}

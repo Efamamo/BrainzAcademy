@@ -110,3 +110,9 @@
   font-size: 15px;
   color: #888;
 }
+
+@media (max-width: 769px) {
+  .outer-form-container {
+    height: 100%;
+  }
+}

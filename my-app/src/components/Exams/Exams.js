@@ -10,7 +10,7 @@ function Exams() {
   return (
     <div className="quiz-page">
       <h1>Welcome to the Quiz Zone</h1>
-      <p style={{ width: '80%', margin: '20px auto' }}>
+      <p>
         Get ready to challenge yourself with our exciting range of quizzes.
         Whether you're looking to test your general knowledge or level up
         through progressively tougher questions, we've got you covered. Dive in

@@ -1,4 +1,4 @@
-.icon{
+.icon {
   margin-top: 3px;
 }
 
@@ -10,9 +10,9 @@
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 10px;
-  margin-left: 30px; 
-  }
-  
+  margin-left: 30px;
+}
+
 .search-input {
   flex-grow: 1;
   border: none;
@@ -21,9 +21,14 @@
   font-size: 16px;
   margin-left: 10px;
 }
-  
-.cancel{
+
+.cancel {
   margin-right: 10px;
   cursor: pointer;
 }
 
+@media (max-width: 480px) {
+  .search-container {
+    display: none;
+  }
+}

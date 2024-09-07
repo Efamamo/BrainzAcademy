@@ -35,3 +35,41 @@ p.about-intro {
   margin-bottom: 40px;
   margin: 80px 30px;
 }
+
+/* Large desktops and extra-large screens */
+@media (max-width: 1281px) {
+  .about_container {
+    flex-direction: column;
+    margin: 0 50px;
+    gap: 10px;
+  }
+  .about_container > div {
+    width: 90%;
+    order: 2;
+  }
+
+  .about_container img {
+    width: 50%;
+    order: 1;
+  }
+}
+/* Tablets (portrait and landscape) */
+@media (max-width: 769px) {
+  .about_container {
+    margin: 50px 0;
+  }
+  .about_container img {
+    width: 60%;
+  }
+}
+
+/* Mobile phones (portrait and landscape) */
+@media (max-width: 480px) {
+  .about_container {
+    padding: 10px;
+  }
+
+  .about_container img {
+    width: 80%;
+  }
+}

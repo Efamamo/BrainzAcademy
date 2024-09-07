@@ -32,7 +32,7 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
-  width: 500px;
+  max-width: 500px;
   transition: ease 1.2s;
   cursor: pointer;
 }
@@ -67,4 +67,17 @@
 
 .button:hover {
   background-color: #0056b3;
+}
+
+/* Large desktops and extra-large screens */
+@media (max-width: 1281px) {
+  .resources-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .resources-container .intro {
+    padding-left: 0;
+    margin: 0 auto;
+  }
 }
