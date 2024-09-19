@@ -42,6 +42,7 @@
 
   .grade p {
     width: 90%;
+    margin: 20px auto;
   }
   .subject-container {
     padding: 0;

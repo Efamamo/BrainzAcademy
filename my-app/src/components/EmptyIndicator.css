@@ -1,21 +1,24 @@
-
-
 .empty-indicator {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  height: auto;
+}
+
+.empty-img {
+  width: 248px;
+}
+
+.empty-text {
+  font-style: italic;
+  font-size: 1.125rem;
+  color: #718096;
+}
+
+@media (max-width: 769px) {
+  .empty-indicator {
+    height: 60vh;
   }
-  
-  .empty-img {
-    width: 248px;
-  }
-  
-  .empty-text {
-    font-style: italic;
-    font-size: 1.125rem; 
-    color: #718096; 
-  }
-  
+}

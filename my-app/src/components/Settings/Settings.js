@@ -11,7 +11,7 @@ const SettingsPage = () => {
   const [serverError, setServerError] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const url = 'http://localhost:4000/auth/get-user';
+  const url = 'https://brainzacademy-backend-1.onrender.com/auth/get-user';
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -75,7 +75,7 @@ const SettingsPage = () => {
       localStorage.removeItem('refreshToken');
       localStorage.setItem('isLoggedIn', false);
 
-      navigate('/login');
+      navigate('/');
     } else {
       setServerError('Server error occurred.');
     }

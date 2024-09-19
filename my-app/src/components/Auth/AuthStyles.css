@@ -113,6 +113,13 @@
 
 @media (max-width: 769px) {
   .outer-form-container {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .outer-form-container {
     height: 100%;
+    margin: 20px;
   }
 }

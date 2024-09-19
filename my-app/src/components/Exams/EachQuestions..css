@@ -45,8 +45,8 @@ label.active:active {
   align-items: center;
   gap: 6px;
   position: absolute;
-  right: 130px;
-  top: 95px;
+  right: 180px;
+  top: 50px;
   cursor: pointer;
 }
 
@@ -161,7 +161,8 @@ label.active:active {
     width: 100%;
   }
   .quit {
-    top: 50px;
+    top: 47px;
+    right: 100px;
   }
 }
 
@@ -187,5 +188,19 @@ label.active:active {
 
   .upper-exam-container {
     margin: 15px;
+  }
+  .exam-container .questions {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination-container {
+    padding: 0;
+  }
+  .quit {
+    top: 47px;
+    right: 20px;
   }
 }

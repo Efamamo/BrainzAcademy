@@ -3,12 +3,14 @@ export default async function refreshToken() {
   const refreshToken = localStorage.getItem('refreshToken');
 
   try {
-    const response = await fetch('http://localhost:4000/auth/refresh', {
-      method: 'POST',
-      body: JSON.stringify({ token: refreshToken }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-    
+    const response = await fetch(
+      'https://brainzacademy-backend-1.onrender.com/auth/refresh',
+      {
+        method: 'POST',
+        body: JSON.stringify({ token: refreshToken }),
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
 
     if (response.status === 200) {
       const data = await response.json();

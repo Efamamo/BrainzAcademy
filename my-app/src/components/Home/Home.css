@@ -53,6 +53,10 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly more pronounced shadow on hover */
 }
 
+.greeting p {
+  margin: 20px 0;
+}
+
 /* Large desktops and extra-large screens */
 @media (max-width: 1281px) {
   .landing-container {
@@ -72,12 +76,17 @@
 }
 /* Tablets (portrait and landscape) */
 @media (max-width: 769px) {
+  .landing-container {
+    height: 76vh;
+  }
   .landing-container .greeting {
     width: 90%;
   }
 }
 
-
 /* Mobile phones (portrait and landscape) */
-@media (min-width: 480px) {
+@media (max-width: 480px) {
+  .landing-container {
+    height: 100%;
+  }
 }

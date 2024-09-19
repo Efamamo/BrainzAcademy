@@ -1,12 +1,14 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './ResetPasswordStyles.css';
+import { CircularProgress } from '@mui/material';
 
 export default function ResetPassword() {
   const [newPasswordError, setNewPasswordError] = useState(null);
   const [tokenError, setTokenError] = useState(null);
   const [serverError, setServerError] = useState(false);
   const [token, setToken] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const newPasswordRef = useRef();
 
@@ -29,15 +31,16 @@ export default function ResetPassword() {
     const newPassword = newPasswordRef.current.value;
 
     try {
+      setIsLoading(true);
       const response = await fetch(
-        `http://localhost:4000/auth/reset-password?token=${token}`,
+        `https://brainzacademy-backend-1.onrender.com/auth/reset-password?token=${token}`,
         {
           method: 'PATCH',
           body: JSON.stringify({ newPassword }),
           headers: { 'Content-Type': 'application/json' },
         }
       );
-
+      setIsLoading(false);
       if (response.status === 204) {
         setTokenError(false);
         setNewPasswordError(false);
@@ -82,7 +85,15 @@ export default function ResetPassword() {
           </div>
           {serverError && <p className="error-message">{serverError}</p>}
           <button type="submit" className="submit-button">
-            Reset Password
+            {isLoading ? (
+              <CircularProgress
+                size={18}
+                thickness={4}
+                sx={{ color: 'white', padding: 0, margin: 0 }}
+              />
+            ) : (
+              'Reset Password'
+            )}
           </button>
         </form>
       </div>

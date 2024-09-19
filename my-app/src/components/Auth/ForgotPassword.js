@@ -1,9 +1,11 @@
 import React, { useRef, useState } from 'react';
 import './ForgotPasswordStyles.css';
+import { CircularProgress } from '@mui/material';
 
 export default function ForgotPassword() {
   const [emailError, setEmailError] = useState(null);
   const emailInputRef = useRef();
+  const [isLoading, setIsLoading] = useState(false);
 
   async function submitHandler(e) {
     e.preventDefault();
@@ -11,14 +13,16 @@ export default function ForgotPassword() {
 
     // Add your email verification logic here
     try {
+      setIsLoading(true);
       const response = await fetch(
-        'http://localhost:4000/auth/forgot-password',
+        'https://brainzacademy-backend-1.onrender.com/auth/forgot-password',
         {
           method: 'PATCH',
           body: JSON.stringify({ email }),
           headers: { 'Content-Type': 'application/json' },
         }
       );
+      setIsLoading(false);
 
       if (response.status === 200) {
         // Handle success
@@ -55,7 +59,15 @@ export default function ForgotPassword() {
           </div>
           {emailError && <p className="error-message">{emailError}</p>}
           <button type="submit" className="submit-button">
-            Send Reset Link
+            {isLoading ? (
+              <CircularProgress
+                size={18}
+                thickness={4}
+                sx={{ color: 'white', padding: 0, margin: 0 }}
+              />
+            ) : (
+              'Send Reset Link'
+            )}
           </button>
         </form>
       </div>

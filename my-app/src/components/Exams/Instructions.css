@@ -17,12 +17,18 @@
 
 @media (max-width: 769px) {
   .instructions {
-    height: 75vh;
+    height: auto;
+  }
+  .instruction-container {
+    display: flex;
+    height: 76vh;
+    justify-content: center;
+    align-items: center;
   }
 }
 
 @media (max-width: 480px) {
-  .instructions {
+  .instruction-container {
     height: 100%;
     margin: 10px;
   }

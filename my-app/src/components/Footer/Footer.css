@@ -78,7 +78,7 @@ footer {
   width: 20px;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 480px) {
   .footer-navigation {
     display: none;
   }

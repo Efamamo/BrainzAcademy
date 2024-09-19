@@ -78,6 +78,12 @@
 
 @media (max-width: 769px) {
   .settings-page {
-    height: 100vh;
+    height: 76vh;
+  }
+}
+@media (max-width: 480px) {
+  .settings-page {
+    height: 100%;
+    margin: 50px 10px;
   }
 }

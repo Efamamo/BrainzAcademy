@@ -4,7 +4,7 @@ export const PrevArrow = (props) => {
   return (
     <div
       className={className}
-      style={{ ...arrowStyles, left: '20px' }} // Adjust 'left' for positioning
+      style={{ ...arrowStyles, left: '-40px' }} // Adjust 'left' for positioning
       onClick={onClick}
     />
   );
@@ -16,7 +16,7 @@ export const NextArrow = (props) => {
   return (
     <div
       className={className}
-      style={{ ...arrowStyles, right: '20px' }} // Adjust 'right' for positioning
+      style={{ ...arrowStyles, right: '0' }} // Adjust 'right' for positioning
       onClick={onClick}
     />
   );

@@ -37,6 +37,7 @@ function Exam({ generalExam, quitExam }) {
 
   const closeModal = () => {
     setIsModalOpen(false);
+    navigate(`/exams/${quitExam}-desc`, { replace: true });
   };
 
   //reset whenever person leaves page is

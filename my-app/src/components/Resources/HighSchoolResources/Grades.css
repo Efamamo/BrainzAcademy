@@ -1,23 +1,45 @@
-Grade9.css
+Grade9.css .grade {
+  padding: 2rem;
+  padding-left: 200px;
+}
 
-.grade {
-    padding: 2rem;
-    padding-left: 200px;
+.grade p {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.grade h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 5rem;
+}
+
+.slider-container {
+  margin-bottom: 5rem;
+}
+
+@media (max-width: 769px) {
+  .grade .class-cont {
+    width: 80%;
+    padding: 0;
+    margin: auto;
   }
-  
-  .grade p {
-    margin-bottom: 2rem;
-    font-size: 1rem;
-    line-height: 1.5;
+
+  .slick-arrow.slick-prev {
+    left: -30px !important;
   }
-  
-  .grade h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 5rem;
+  .slick-arrow.slick-next {
+    right: -30px !important;
   }
-  
-  .slider-container {
-    margin-bottom: 5rem;
+}
+
+@media (max-width: 480px) {
+  .grade .class-cont {
+    padding: 0;
+    margin: auto;
   }
-  
+  .grade {
+    margin: 0;
+  }
+}

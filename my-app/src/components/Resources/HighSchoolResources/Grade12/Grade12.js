@@ -56,99 +56,100 @@ const Grade12 = () => {
       </p>
 
       <h2>Lists of Grade 12 Textbooks</h2>
-
-      <Slider {...settings}>
-        <Link to="/resources/highschool/grade12/agriculture">
-          <Subject
-            number={1}
-            title={'Agriculture'}
-            image={Agriculture}
-            grade={12}
-            subject={'Agriculture'}
-          />
-        </Link>
-        <Link to="/resources/highschool/grade12/english">
-          <Subject
-            number={2}
-            title={'English'}
-            image={english}
-            grade={12}
-            subject={'English'}
-          />
-        </Link>
-        <Link to="/resources/highschool/grade12/maths">
-          <Subject
-            number={3}
-            title={'Mathematics'}
-            image={maths}
-            grade={12}
-            subject={'Mathematics'}
-          />
-        </Link>
-        <Link to="/resources/highschool/grade12/geography">
-          <Subject
-            number={4}
-            title={'Geography'}
-            image={Geography}
-            grade={12}
-            subject={'Geography'}
-          />
-        </Link>
-        <Link to="/resources/highschool/grade12/biology">
-          <Subject
-            number={5}
-            title={'Biology'}
-            image={Biology}
-            grade={12}
-            subject={'Biology'}
-          />
-        </Link>
-        <Link to="/resources/highschool/grade12/history">
-          <Subject
-            number={6}
-            title={'History'}
-            image={History}
-            grade={12}
-            subject={'History'}
-          />
-        </Link>
-        <Link to="/resources/highschool/grade12/it">
-          <Subject
-            number={7}
-            title={'IT'}
-            image={it}
-            grade={12}
-            subject={'IT'}
-          />
-        </Link>
-        <Link to="/resources/highschool/grade12/chemistry">
-          <Subject
-            number={8}
-            title={'Chemistry'}
-            image={Chemistry}
-            grade={12}
-            subject={'Chemistry'}
-          />
-        </Link>
-        <Link to="/resources/highschool/grade12/physics">
-          <Subject
-            number={9}
-            title={'Physics'}
-            image={Physics}
-            grade={12}
-            subject={'Physics'}
-          />
-        </Link>
-        <Link to="/resources/highschool/grade12/economics">
-          <Subject
-            number={10}
-            title={'Economics'}
-            image={Economics}
-            grade={12}
-            subject={'Economics'}
-          />
-        </Link>
-      </Slider>
+      <div className="class-cont">
+        <Slider {...settings}>
+          <Link to="/resources/highschool/grade12/agriculture">
+            <Subject
+              number={1}
+              title={'Agriculture'}
+              image={Agriculture}
+              grade={12}
+              subject={'Agriculture'}
+            />
+          </Link>
+          <Link to="/resources/highschool/grade12/english">
+            <Subject
+              number={2}
+              title={'English'}
+              image={english}
+              grade={12}
+              subject={'English'}
+            />
+          </Link>
+          <Link to="/resources/highschool/grade12/maths">
+            <Subject
+              number={3}
+              title={'Mathematics'}
+              image={maths}
+              grade={12}
+              subject={'Mathematics'}
+            />
+          </Link>
+          <Link to="/resources/highschool/grade12/geography">
+            <Subject
+              number={4}
+              title={'Geography'}
+              image={Geography}
+              grade={12}
+              subject={'Geography'}
+            />
+          </Link>
+          <Link to="/resources/highschool/grade12/biology">
+            <Subject
+              number={5}
+              title={'Biology'}
+              image={Biology}
+              grade={12}
+              subject={'Biology'}
+            />
+          </Link>
+          <Link to="/resources/highschool/grade12/history">
+            <Subject
+              number={6}
+              title={'History'}
+              image={History}
+              grade={12}
+              subject={'History'}
+            />
+          </Link>
+          <Link to="/resources/highschool/grade12/it">
+            <Subject
+              number={7}
+              title={'IT'}
+              image={it}
+              grade={12}
+              subject={'IT'}
+            />
+          </Link>
+          <Link to="/resources/highschool/grade12/chemistry">
+            <Subject
+              number={8}
+              title={'Chemistry'}
+              image={Chemistry}
+              grade={12}
+              subject={'Chemistry'}
+            />
+          </Link>
+          <Link to="/resources/highschool/grade12/physics">
+            <Subject
+              number={9}
+              title={'Physics'}
+              image={Physics}
+              grade={12}
+              subject={'Physics'}
+            />
+          </Link>
+          <Link to="/resources/highschool/grade12/economics">
+            <Subject
+              number={10}
+              title={'Economics'}
+              image={Economics}
+              grade={12}
+              subject={'Economics'}
+            />
+          </Link>
+        </Slider>
+      </div>
     </div>
   );
 };

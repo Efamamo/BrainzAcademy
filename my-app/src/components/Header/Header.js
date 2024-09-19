@@ -36,22 +36,25 @@ function Header() {
         if (valid) {
           localStorage.setItem('isLoggedIn', true);
         } else {
-          await fetch('http://localhost:4000/auth/logout', {
-            method: 'POST',
-            body: JSON.stringify({
-              token: auth.refreshToken,
-            }),
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          });
+          await fetch(
+            'https://brainzacademy-backend-1.onrender.com/auth/logout',
+            {
+              method: 'POST',
+              body: JSON.stringify({
+                token: auth.refreshToken,
+              }),
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            }
+          );
 
           dispatch(authActions.logout());
           localStorage.setItem('accessToken', null);
           localStorage.setItem('refreshToken', null);
           localStorage.removeItem('isLoggedIn');
 
-          navigate('/login');
+          navigate('/');
         }
       }
     };
@@ -122,7 +125,7 @@ function Header() {
                 </NavLink>
               </li>
               <li className="logout">
-                <Logout onLogout={toggleMenu} />
+                <Logout onLogout={() => {}} />
               </li>
             </>
           )}

@@ -1,44 +1,46 @@
 /* Subject.css */
 
 .highschool-subject-container {
-    width: 320px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 10px;
-    height: 370px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 1.2s ease; /* Transition for scaling effect */
-    cursor: pointer;
-    padding: 20px;
-    margin-bottom: 70px;
-    background-color: white; /* Added background color to match Tailwind */
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  height: 370px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 1.2s ease; /* Transition for scaling effect */
+  cursor: pointer;
+  padding: 20px;
+  margin: 0 20px;
+  margin-bottom: 70px;
+
+  background-color: white; /* Added background color to match Tailwind */
 }
 
 .highschool-subject-container:hover {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 .highschool-subject-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #065f46;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #065f46;
 }
 
 .highschool-subject-image-container {
-    padding: 10px;
-    display: flex;
-    justify-content: center;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .highschool-subject-image {
-    border-radius: 10px;
-    height: 15rem;
-    width: auto;
+  border-radius: 10px;
+  height: 15rem;
+  width: auto;
 }
 
 .highschool-subject-button-container {
-    padding: 10px;
-    display: flex;
-    justify-content: center;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
 }

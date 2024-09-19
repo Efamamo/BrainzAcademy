@@ -146,20 +146,21 @@ const Grade10 = () => {
       </p>
 
       <h2>List of Grade 10 Textbooks</h2>
-
-      <Slider {...settings}>
-        {subjects.map((subject) => (
-          <Link key={subject.number} to={subject.link}>
-            <Subject
-              number={subject.number}
-              title={subject.title}
-              image={subject.image}
-              grade={10}
-              subject={subject.subject}
-            />
-          </Link>
-        ))}
-      </Slider>
+      <div className="class-cont">
+        <Slider {...settings}>
+          {subjects.map((subject) => (
+            <Link key={subject.number} to={subject.link}>
+              <Subject
+                number={subject.number}
+                title={subject.title}
+                image={subject.image}
+                grade={10}
+                subject={subject.subject}
+              />
+            </Link>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };

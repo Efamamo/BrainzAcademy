@@ -3,10 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { authActions } from '../../store/store';
 import './AuthStyles.css';
+import { CircularProgress } from '@mui/material';
 export default function Login() {
   const [verificationError, setVerificationError] = useState(false);
   const [credentialError, setCredentialError] = useState(false);
   const [serverError, setServerError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -27,18 +29,24 @@ export default function Login() {
     const password = passwordInputRef.current.value;
 
     try {
-      const response = await fetch('http://localhost:4000/auth/login', {
-        method: 'POST',
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      setIsLoading(true);
+      const response = await fetch(
+        'https://brainzacademy-backend-1.onrender.com/auth/login',
+        {
+          method: 'POST',
+          body: JSON.stringify({
+            email,
+            password,
+          }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      setIsLoading(false);
 
       const data = await response.json();
+      console.log(data);
 
       if (response.status == 201) {
         setCredentialError(false);
@@ -119,7 +127,17 @@ export default function Login() {
           ) : null}
           {serverError ? <p className="error">{serverError}</p> : null}
 
-          <button className="auth-button">Login</button>
+          <button className="auth-button">
+            {isLoading ? (
+              <CircularProgress
+                size={18}
+                thickness={4}
+                sx={{ color: 'white', padding: 0, margin: 0 }}
+              />
+            ) : (
+              'LogIn'
+            )}
+          </button>
         </form>
         <p>
           Dont have an account? <Link to="/signup">Signup</Link>

@@ -148,24 +148,25 @@ const Grade9 = () => {
       </p>
 
       <h2>Lists of Grade 9 Textbooks</h2>
-
-      <Slider {...settings}>
-        {subjects.map((subject) => (
-          <Link
-            style={{ display: 'flex', justifyContent: 'center' }}
-            key={subject.number}
-            to={subject.link}
-          >
-            <Subject
-              number={subject.number}
-              title={subject.title}
-              image={subject.image}
-              grade={9}
-              subject={subject.subject}
-            />
-          </Link>
-        ))}
-      </Slider>
+      <div className="class-cont">
+        <Slider {...settings}>
+          {subjects.map((subject) => (
+            <Link
+              style={{ display: 'flex', justifyContent: 'center' }}
+              key={subject.number}
+              to={subject.link}
+            >
+              <Subject
+                number={subject.number}
+                title={subject.title}
+                image={subject.image}
+                grade={9}
+                subject={subject.subject}
+              />
+            </Link>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };

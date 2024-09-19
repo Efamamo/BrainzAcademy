@@ -4,11 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { authActions } from '../../store/store';
 import refreshToken from './refresh';
+import { CircularProgress } from '@mui/material';
 
 export default function ChangePassword() {
   const [oldPasswordError, setOldPasswordError] = useState(null);
   const [newPasswordError, setNewPasswordError] = useState(null);
   const [serverError, setServerError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const oldPasswordRef = useRef();
@@ -22,8 +24,9 @@ export default function ChangePassword() {
     const newPassword = newPasswordRef.current.value;
 
     try {
+      setIsLoading(true);
       const response = await fetch(
-        'http://localhost:4000/auth/change-password',
+        'https://brainzacademy-backend-1.onrender.com/auth/change-password',
         {
           method: 'PATCH',
           body: JSON.stringify({ oldPassword, newPassword }),
@@ -33,6 +36,7 @@ export default function ChangePassword() {
           },
         }
       );
+      setIsLoading(false);
 
       if (response.status === 204) {
         alert('Your password has been changed successfully.');
@@ -49,7 +53,7 @@ export default function ChangePassword() {
             })
           );
           const newResponse = await fetch(
-            'http://localhost:4000/auth/change-password',
+            'https://brainzacademy-backend-1.onrender.com/auth/change-password',
             {
               method: 'PATCH',
               body: JSON.stringify({ oldPassword, newPassword }),
@@ -69,7 +73,7 @@ export default function ChangePassword() {
             dispatch(authActions.logout());
             localStorage.setItem('accessToken', null);
             localStorage.setItem('refreshToken', null);
-            navigate('/login');
+            navigate('/');
           } else {
             const newdata = await newResponse.json();
 
@@ -94,7 +98,7 @@ export default function ChangePassword() {
                 localStorage.setItem('refreshToken', null);
                 localStorage.setItem('isLoggedIn', false);
 
-                navigate('/login');
+                navigate('/');
               }
             }
           }
@@ -104,7 +108,7 @@ export default function ChangePassword() {
           localStorage.setItem('refreshToken', null);
           localStorage.setItem('isLoggedIn', false);
 
-          navigate('/login');
+          navigate('/');
         }
       } else {
         const data = await response.json();
@@ -130,7 +134,7 @@ export default function ChangePassword() {
             localStorage.setItem('refreshToken', null);
             localStorage.setItem('isLoggedIn', false);
 
-            navigate('/login');
+            navigate('/');
           }
         }
       }
@@ -175,7 +179,15 @@ export default function ChangePassword() {
           </div>
           {serverError && <p className="error-message">{serverError}</p>}
           <button type="submit" className="submit-button">
-            Change Password
+            {isLoading ? (
+              <CircularProgress
+                size={18}
+                thickness={4}
+                sx={{ color: 'white', padding: 0, margin: 0 }}
+              />
+            ) : (
+              'Change Password'
+            )}
           </button>
         </form>
       </div>
