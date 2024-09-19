@@ -22,7 +22,6 @@ function Exam({ generalExam, quitExam }) {
     currentPage * 6
   );
 
-
   const handleSubmit = () => {
     setIsModalOpen(true);
   };
@@ -38,7 +37,6 @@ function Exam({ generalExam, quitExam }) {
 
   const closeModal = () => {
     setIsModalOpen(false);
-    navigate(`/exams/${quitExam}-desc`, { replace: true });
   };
 
   //reset whenever person leaves page is
@@ -52,7 +50,6 @@ function Exam({ generalExam, quitExam }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage]);
-
 
   // Timer effect
   useEffect(() => {
@@ -126,6 +123,7 @@ function Exam({ generalExam, quitExam }) {
           closeModal={closeModal}
           correctCount={correctCount}
           totalQuestions={generalExam.length}
+          quitExam={quitExam}
         />
       )}
     </div>

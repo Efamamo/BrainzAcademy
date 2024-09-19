@@ -24,6 +24,7 @@ function Exams() {
             image={exam.image}
             description={exam.desc}
             link={exam.link}
+            
           />
         ))}
       </div>
