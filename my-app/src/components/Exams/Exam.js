@@ -22,6 +22,7 @@ function Exam({ generalExam, quitExam }) {
     currentPage * 6
   );
 
+
   const handleSubmit = () => {
     setIsModalOpen(true);
   };
@@ -52,9 +53,6 @@ function Exam({ generalExam, quitExam }) {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
-  useEffect(() => {
-    console.log('load');
-  }, []);
 
   // Timer effect
   useEffect(() => {

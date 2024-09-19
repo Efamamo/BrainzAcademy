@@ -46,7 +46,6 @@ export default function Login() {
       setIsLoading(false);
 
       const data = await response.json();
-      console.log(data);
 
       if (response.status == 201) {
         setCredentialError(false);
